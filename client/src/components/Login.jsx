@@ -1,10 +1,7 @@
 const Login = () => {
     return(
         <div>
-            <form>
-                <label>Username</label>
-                <input id='username' name='username' required />
-                <br/>
+            <form id='login-form'>
                 <label>Email</label>
                 <input id='email' name='email' required />
                 <br/>
