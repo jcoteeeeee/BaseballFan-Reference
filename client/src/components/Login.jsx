@@ -1,4 +1,4 @@
-const LoginForm = () => {
+const Login = () => {
     return(
         <div>
             <form>
@@ -17,4 +17,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm 
+export default Login
