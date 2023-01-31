@@ -10,7 +10,7 @@ const ProfilePage = () => {
                         <th>Date</th>
                         <th>Result</th>
                         <th>Score</th>
-                        <th>Opponnent</th>
+                        <th>Opponent</th>
                         <th>Location</th>
                         <th>Starting Pitcher</th>
                         <th>Cumulative Record</th>
