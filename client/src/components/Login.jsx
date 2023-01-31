@@ -1,6 +1,9 @@
+import Header from './Header.jsx'
+
 const Login = () => {
     return(
         <div>
+            <Header/> 
             <form id='login-form'>
                 <label>Email</label>
                 <input id='email' name='email' required />
