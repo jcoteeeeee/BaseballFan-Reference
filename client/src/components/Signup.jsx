@@ -1,6 +1,9 @@
+import Header from './Header.jsx'  
+
 const Signup = () => {
     return(
         <div>
+            <Header/>
             <form id='signup-form3'>
                 <label>Username</label>
                 <input id='signup-usr' name='signup-usr' required />
