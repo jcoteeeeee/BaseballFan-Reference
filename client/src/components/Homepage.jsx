@@ -1,8 +1,8 @@
-const Homepage = () => {
+const Homepage = ( {handleLogBtnClick, handleSignupClick} ) => {
     return(
         <div>
-            <button>Login</button>
-            <p>or signup</p>
+            <button onClick={handleLogBtnClick}>Login</button>
+            <p onClick={handleSignupClick}>or signup</p>
         </div>
     )
 }  
