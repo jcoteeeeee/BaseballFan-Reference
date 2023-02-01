@@ -49,8 +49,7 @@ function App() {
     }
     requestGames()
   }, [])
-  console.log(games)
-
+  
   return (
     <div>
       <Routes>
