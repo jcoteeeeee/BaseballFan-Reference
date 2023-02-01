@@ -26,10 +26,10 @@ function App() {
     navigate('/profilepage')
   }
 
-  // takes you from signup page to profile page 
-  const handleSignup = () => {
-    navigate('/profilepage')
-  }
+  // // takes you from signup page to profile page 
+  // const handleSignup = () => {
+  //   navigate('/profilepage')
+  // }
 
   //get request for all users
   useEffect(() => {
@@ -50,12 +50,31 @@ function App() {
     requestGames()
   }, [])
 
+  // post request to create an account (for signup page)
+  const handleSignupSubmit = (e) => {
+    e.preventDefault()
+    const signup = async (e, user) => {
+        let req  = await fetch(`http://localhost:3000/users/${user.id}`, {
+          method: 'POST', 
+          headers: {'Content-Type': 'application.json'},
+          body: JSON.stringify({
+            username: e.target.username.value,
+            email: e.target.email.value,
+            password: e.target.password.value
+          })
+        })
+    }
+    signup()
+    // navigate('/profilepage')
+    console.log('submit')
+  } 
+
   return (
     <div>
       <Routes>
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login handleLogin={handleLogin}/>} />
-        <Route exact path='signup' element={<Signup handleSignup={handleSignup}/>} />
+        <Route exact path='signup' element={<Signup handleSignupSubmit={handleSignupSubmit}/>} />
         <Route exact path='/profilepage' element={<ProfilePage games={games}/>} />
       </Routes>
     </div>
