@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema[7.0].define(version: 2023_01_31_220217) do
   create_table "games", force: :cascade do |t|
+    t.integer "user_id"
     t.date "date"
     t.string "result"
     t.string "score"
