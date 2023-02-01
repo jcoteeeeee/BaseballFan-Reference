@@ -4,6 +4,16 @@ const ProfilePage = ( {games} ) => {
     return(
         <div>
             <Header/> 
+            <div>
+                <p>@profilename</p>
+                <p>Favorite team: </p>
+                <p>First game attended: </p>
+                <p>Total games attended: </p>
+            </div>
+            <div>
+                <h3>Record</h3>
+                <h3>percentage </h3>
+            </div>
             <div id='game-table'>
                 <table>
                     <tr>
