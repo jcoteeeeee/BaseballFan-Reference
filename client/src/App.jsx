@@ -3,9 +3,13 @@ import ProfilePage from './components/ProfilePage'
 import Login from './components/Login'
 import Signup from'./components/Signup'
 import {Routes, Route, useNavigate} from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 function App() {
-  const navigate = useNavigate()
+  const navigate = useNavigate() 
+  const [users, setUsers] = useState([])  
+  const [games, setGames] = useState([])
+  
 
   // takes you from homepage to login page
   const handleLogBtnClick = () => {
@@ -27,16 +31,36 @@ function App() {
     navigate('/profilepage')
   }
 
+  //get request for all users
+  useEffect(() => {
+    const requestUsers = async () => {
+      let req = await fetch('http://localhost:3000/users')
+      let res = await req.json()
+      setUsers(res)
+    }
+    requestUsers()
+  }, [])
+
+  useEffect(() => {
+    const requestGames = async () => {
+      let req = await fetch('http://localhost:3000/games')
+      let res = await req.json()  
+      setGames(res)
+    }
+    requestGames()
+  }, [])
+  console.log(games)
+
   return (
     <div>
       <Routes>
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login handleLogin={handleLogin}/>} />
         <Route exact path='signup' element={<Signup handleSignup={handleSignup}/>} />
-        <Route exact path='/profilepage' element={<ProfilePage/>} />
+        <Route exact path='/profilepage' element={<ProfilePage games={games}/>} />
       </Routes>
     </div>
   )
 }
 
-export default App
+export default App 
