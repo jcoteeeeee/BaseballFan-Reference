@@ -20,13 +20,30 @@ const ProfilePage = ( {games} ) => {
                         games.map((game) => {
                             return(
                                 <tr>
-                                    {game.date}
-                                </tr>
+                                    <th>
+                                        {game.date}
+                                    </th>
+                                    <th>
+                                        {game.result}
+                                    </th>
+                                    <th>
+                                        {game.score}
+                                    </th> 
+                                    <th>
+                                        {game.opponent}
+                                    </th>
+                                    <th>
+                                        {game.location}
+                                    </th>
+                                    <th>
+                                        {game.st_pitcher}
+                                    </th>
+                                </tr>  
                             )
                         })
                     }
-                </table>       
-            </div>
+                </table>  
+            </div>  
         </div>
     )
 }
