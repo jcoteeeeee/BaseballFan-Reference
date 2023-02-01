@@ -1,6 +1,6 @@
 import Header from './Header.jsx'
 
-const ProfilePage = () => {
+const ProfilePage = ( {games} ) => {
     return(
         <div>
             <Header/> 
@@ -16,6 +16,15 @@ const ProfilePage = () => {
                         <th>Cumulative Record</th>
                         <th>Note</th>
                     </tr>
+                    {
+                        games.map((game) => {
+                            return(
+                                <tr>
+                                    {game.date}
+                                </tr>
+                            )
+                        })
+                    }
                 </table>       
             </div>
         </div>
