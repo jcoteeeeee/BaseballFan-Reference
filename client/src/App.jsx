@@ -49,7 +49,7 @@ function App() {
     }
     requestGames()
   }, [])
-  
+
   return (
     <div>
       <Routes>

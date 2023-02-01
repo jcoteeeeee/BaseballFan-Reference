@@ -7,6 +7,7 @@ const Signup = ( {handleSignup} ) => {
             <form id='signup-form' onSubmit={handleSignup}>
                 <label>Username</label>
                 <input id='signup-usr' name='signup-usr'/> {/*make required later */}
+                <br/>
                 <label>Email</label>
                 <input id='signup-email' name='signup-email'/> {/*make required later */}
                 <br/>
