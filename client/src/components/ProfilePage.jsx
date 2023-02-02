@@ -1,6 +1,6 @@
 import Header from './Header.jsx'
 
-const ProfilePage = ( {games} ) => {
+const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn} ) => {
     return(
         <div>
             <Header/> 
@@ -14,9 +14,9 @@ const ProfilePage = ( {games} ) => {
                 <h3>Record</h3>
                 <h3>percentage </h3>
             </div>
-            <button>
+            <button id='addgame' onClick={handleAddGameBtn}>
                 Add game
-            </button>
+                </button>
             <div id='game-table'>
                 <table>
                     <tr>
@@ -55,8 +55,9 @@ const ProfilePage = ( {games} ) => {
                             )
                         })
                     }
-                </table>  
+                </table>   
             </div>  
+            <button id='editgame' onClick={handleEditGameBtn}>Edit game</button>
         </div>
     )
 }

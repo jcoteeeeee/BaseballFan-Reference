@@ -3,6 +3,7 @@ import Header from './Header.jsx'
 const AddGamePage = () => {
     return(
         <div>
+            <Header/>
             <form id='addgame-form'>
                 <label>Date</label>
                 <input type='date' name='date' />

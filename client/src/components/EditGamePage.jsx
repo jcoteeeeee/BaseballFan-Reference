@@ -1,7 +1,10 @@
+import Header from './Header.jsx'  
+
 const EditGamePage = () => {
     return(
         <div>
             <form>
+                <Header/>  
                 <label>Date</label>
                 <input type='date' name='date' />
                 <br />
@@ -17,7 +20,7 @@ const EditGamePage = () => {
                 <label>Note</label>
                 <input type='text' name='note' />
                 <br />
-                <button type='submit'>Edit game</button>
+                <button type='submit'>Save changes</button>
             </form>    
         </div>
     )
