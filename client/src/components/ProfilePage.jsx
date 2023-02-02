@@ -14,6 +14,9 @@ const ProfilePage = ( {games} ) => {
                 <h3>Record</h3>
                 <h3>percentage </h3>
             </div>
+            <button>
+                Add game
+            </button>
             <div id='game-table'>
                 <table>
                     <tr>
