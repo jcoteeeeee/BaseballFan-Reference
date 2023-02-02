@@ -13,5 +13,16 @@ class UsersController < ApplicationController
         user = User.create(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password], fav_team: params[:fav_team], photo: params[:photo])
         render json: user
     end 
+
+    def update 
+        user = User.find_by(id: params[:id])
+        user.update(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password], fav_team: params[:fav_team], photo: params[:photo])  
+        render json: user 
+    end 
+
+    def destroy 
+        user = User.find_by(id: params[:id])
+        user.destroy  
+    end 
     
 end
