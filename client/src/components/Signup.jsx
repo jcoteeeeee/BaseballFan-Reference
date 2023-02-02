@@ -1,10 +1,10 @@
 import Header from './Header.jsx'  
 
-const Signup = ( {handleSignup} ) => {
+const Signup = ( {handleSignupSubmit} ) => {
     return(
         <div>
             <Header/>
-            <form id='signup-form' onSubmit={handleSignup}>
+            <form id='signup-form' onSubmit={handleSignupSubmit}>
                 <label>Username</label>
                 <input id='signup-usr' name='signup-usr'/> {/*make required later */}
                 <br/>
