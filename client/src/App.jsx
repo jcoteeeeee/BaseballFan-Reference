@@ -48,7 +48,7 @@ function App() {
     navigate('/editprofile')
   }
 
-  //get request for all users
+  //get request for all users _____________________________________________
   useEffect(() => {
     const requestUsers = async () => {
       let req = await fetch('http://localhost:3000/users')
@@ -57,7 +57,9 @@ function App() {
     }
     requestUsers()
   }, [])
+  // ______________________________________________________________________
 
+  // get request for all games ____________________________________________
   useEffect(() => {
     const requestGames = async () => {
       let req = await fetch('http://localhost:3000/games')
@@ -66,18 +68,19 @@ function App() {
     }
     requestGames()
   }, [])
+  // _____________________________________________________________________
 
-  // post request to create an account (for signup page)
+  // post request to create an account (for signup page) _________________
   const handleSignupSubmit = (e) => {
     e.preventDefault()
-    const signup = async (e, user) => {
-        let req  = await fetch(`http://localhost:3000/users/${user.id}`, {
+    const signup = async (e, users) => {
+        let req  = await fetch(`http://localhost:3000/users`, {
           method: 'POST', 
-          headers: {'Content-Type': 'application.json'},
+          headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
-            username: e.target.username.value,
-            email: e.target.email.value,
-            password: e.target.password.value
+            username: e.target.signup_usr.value,
+            email: e.target.signup_email.value,
+            password: e.target.signup_pass.value
           })
         })
     }
@@ -85,6 +88,7 @@ function App() {
     // navigate('/profilepage')
     console.log('submit')
   } 
+  // _______________________________________________________________________
 
   return (
     <div>
@@ -92,9 +96,9 @@ function App() {
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login handleLogin={handleLogin}/>} />
         <Route exact path='signup' element={<Signup handleSignupSubmit={handleSignupSubmit}/>} />
-        <Route exact path='/profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn}/>} />
-        <Route exact path='/addgame' element={<AddGamePage />} /> 
-        <Route exact path='/editgame' element={<EditGamePage/>} /> 
+        <Route exact path='profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn}/>} />
+        <Route exact path='addgame' element={<AddGamePage/>} /> 
+        <Route exact path='editgame' element={<EditGamePage/>} /> 
         <Route exact path='editprofile' element={<EditProfilePage/>} />
       </Routes>
     </div>
