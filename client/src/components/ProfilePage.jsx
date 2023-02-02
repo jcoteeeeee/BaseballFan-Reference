@@ -1,6 +1,6 @@
 import Header from './Header.jsx'
 
-const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn} ) => {
+const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn} ) => {
     return(
         <div>
             <Header/> 
@@ -9,6 +9,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn} ) => {
                 <p>Favorite team: </p>
                 <p>First game attended: </p>
                 <p>Total games attended: </p>
+                <button id='edit-profile-btn' onClick={handleEditProfileBtn}>Edit profile</button> 
             </div>
             <div>
                 <h3>Record</h3>

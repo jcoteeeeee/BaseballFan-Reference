@@ -3,9 +3,10 @@ import ProfilePage from './components/ProfilePage'
 import Login from './components/Login'
 import Signup from'./components/Signup'   
 import AddGamePage from './components/AddGamePage'  
-import EditGamePage from './components/EditGamePage'
+import EditGamePage from './components/EditGamePage'  
+import EditProfilePage from './components/EditProfilePage'
 import {Routes, Route, useNavigate} from 'react-router-dom'
-import { useEffect, useState } from 'react'  
+import {useEffect, useState} from 'react'  
 
 function App() {
   const navigate = useNavigate() 
@@ -33,13 +34,18 @@ function App() {
   //   navigate('/profilepage')
   // } 
 
-  // takes you from profile page to add game page 
+  // takes you from profile page to addgamepage 
   const handleAddGameBtn = () => {
     navigate('/addgame')
   } 
-
+  
+  //takes you from profile page to editgamepage
   const handleEditGameBtn = () => {
     navigate('/editgame')
+  } 
+
+  const handleEditProfileBtn = () => {
+    navigate('/editprofile')
   }
 
   //get request for all users
@@ -86,9 +92,10 @@ function App() {
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login handleLogin={handleLogin}/>} />
         <Route exact path='signup' element={<Signup handleSignupSubmit={handleSignupSubmit}/>} />
-        <Route exact path='/profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn}/>} />
+        <Route exact path='/profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn}/>} />
         <Route exact path='/addgame' element={<AddGamePage />} /> 
-        <Route exact path='/editgame' element={<EditGamePage/>} />
+        <Route exact path='/editgame' element={<EditGamePage/>} /> 
+        <Route exact path='editprofile' element={<EditProfilePage/>} />
       </Routes>
     </div>
   )
