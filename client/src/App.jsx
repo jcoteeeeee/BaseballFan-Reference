@@ -95,24 +95,24 @@ function App() {
 
   // _______________________________________________________________________
   // for adding a new game 
-  const handleAddGameSubmit = (e) => {
-    e.preventDefault()
-    const addGame = async (e) => {
-      let req = await fetch('http://localhost:3000/games', {
-        method: 'POST', 
-        headers: {'Content-Type': 'application/json'}, 
-        body: JSON.stringify({
-          date: e.target.add_date.value,
-          result: e.target.add_result.value, 
-          score: e.target.add_score.value, 
-          location: e.taregt.add_location.value, 
-          st_pitcher: e.target.add_stp.value, 
-          note: e.target.add_note.value
-        })
-      })
-    }
-    addGame()
-  }
+  // const handleAddGameSubmit = (e) => {
+  //   e.preventDefault()
+  //   const addGame = async (e) => {
+  //     let req = await fetch('http://localhost:3000/games', {
+  //       method: 'POST', 
+  //       headers: {'Content-Type': 'application/json'}, 
+  //       body: JSON.stringify({
+  //         date: e.target.add_date.value,
+  //         result: e.target.add_result.value, 
+  //         score: e.target.add_score.value, 
+  //         location: e.taregt.add_location.value, 
+  //         st_pitcher: e.target.add_stp.value, 
+  //         note: e.target.add_note.value
+  //       })
+  //     })
+  //   }
+  //   addGame()
+  // }
   // ________________________________________________________________________ 
 
   // ________________________________________________________________________ 
@@ -157,7 +157,7 @@ function App() {
         <Route exact path='login' element={<Login handleLogin={handleLogin}/>} />
         <Route exact path='signup' element={<Signup/>} />
         <Route exact path='profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn}/>} handleDeleteGameSubmit={handleDeleteGameSubmit} />
-        <Route exact path='addgame' element={<AddGamePage handleAddGameSubmit={handleAddGameSubmit} />} /> 
+        <Route exact path='addgame' element={<AddGamePage/>} /> 
         <Route exact path='editgame' element={<EditGamePage handleEditGameSubmit={handleEditGameSubmit} />} /> 
         <Route exact path='editprofile' element={<EditProfilePage/>} />
       </Routes> 
