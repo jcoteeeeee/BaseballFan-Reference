@@ -2,14 +2,14 @@ import Header from './Header.jsx'
 import {useState} from 'react' 
 import {useNavigate} from 'react-router-dom'
 
-const Signup = ({ handleSignupSubmit } ) => {
+const Signup = () => {
     const navigate = useNavigate()
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     console.log(username)
 
-    function handleSignupSubmit(e) {
+    const handleSignupSubmit = (e) => {
         e.preventDefault()
         console.log('submitted')
         navigate('/profilepage') // right now it's not going to profilepage

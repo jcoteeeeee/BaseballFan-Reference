@@ -11,6 +11,8 @@ const AddGamePage = () => {
     const [stPitcher, setStPitcher] = useState('') 
     const [note, setNote] = useState('')
 
+    console.log(result) 
+    
     function handleAddGameSubmit(e) {
         e.preventDefault()
         console.log('submitted')
@@ -37,22 +39,22 @@ const AddGamePage = () => {
             <Header/>
             <form id='addgame-form' onSubmit={handleAddGameSubmit}>
                 <label>Date</label>
-                <input value={date} type='date' name='add_date' onChange={(e) => setDate(e.target.value)}/>
+                <input value={date} id='add-date' type='date' name='add_date' onChange={(e) => setDate(e.target.value)}/>
                 <br />
                 <label>Result</label>
-                <input value={result} type='text' name='add_result' onChange={(e) => setResult(e.target.value)}/>
+                <input value={result} id='add-result' type='text' name='add_result' onChange={(e) => setResult(e.target.value)}/>
                 <br />
                 <label>Score</label>
-                <input value={score} type='text' name='add_score' onChange={(e) => setScore(e.target.value)}/>
+                <input value={score} id='add-score' type='text' name='add_score' onChange={(e) => setScore(e.target.value)}/>
                 <br />
                 <label>Location</label>
-                <input value={location} type='text' name='add_location' onChange={(e) => setLocation(e.target.value)}/>
+                <input value={location} id='add-location' type='text' name='add_location' onChange={(e) => setLocation(e.target.value)}/>
                 <br />
                 <label>Starting pitcher </label>  
-                <input value={stPitcher} type='text' name='add_stp' onChange={(e) => setStPitcher(e.target.value)}/>  
+                <input value={stPitcher} id='add-stp' type='text' name='add_stp' onChange={(e) => setStPitcher(e.target.value)}/>  
                 <br/>
                 <label>Note</label>
-                <input value={note} type='text' name='add_note' onChange={(e) => setNote(e.target.value)}/>
+                <input value={note} id='add-note' type='text' name='add_note' onChange={(e) => setNote(e.target.value)}/>
                 <br />
                 <button type='submit'>Add game</button>
             </form>    
