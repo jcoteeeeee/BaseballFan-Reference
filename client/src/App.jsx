@@ -48,8 +48,9 @@ function App() {
     navigate('/editprofile')
   }
 
-  //get request for all users _____________________________________________
-  useEffect(() => {
+  // _____________________________________________________________________
+  //get request for all users 
+  useEffect(() => { 
     const requestUsers = async () => {
       let req = await fetch('http://localhost:3000/users')
       let res = await req.json()
@@ -59,7 +60,8 @@ function App() {
   }, [])
   // ______________________________________________________________________
 
-  // get request for all games ____________________________________________
+  // ______________________________________________________________________
+  // get request for all games 
   useEffect(() => {
     const requestGames = async () => {
       let req = await fetch('http://localhost:3000/games')
@@ -68,26 +70,47 @@ function App() {
     }
     requestGames()
   }, [])
-  // _____________________________________________________________________
+  // ______________________________________________________________________
 
-  // post request to create an account (for signup page) _________________
+  // ______________________________________________________________________
+  // post request to create an account (for signup page)
   const handleSignupSubmit = (e) => {
     e.preventDefault() 
     navigate('/profilepage') // right now it's not going to profilepage
     const signup = async (e) => {
-        let req  = await fetch(`http://localhost:3000/users`, {
-          method: 'POST', 
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            username: e.target.signup_usr.value,
-            email: e.target.signup_email.value,
-            password: e.target.signup_pass.value
-          })
+      let req  = await fetch(`http://localhost:3000/users`, {
+        method: 'POST', 
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          username: e.target.signup_usr.value,
+          email: e.target.signup_email.value,
+          password: e.target.signup_pass.value
         })
+      })
     }
     signup()
   } 
-  // _______________________________________________________________________
+  // _______________________________________________________________________ 
+
+  // 
+  const handleAddGameSubmit = (e) => {
+    e.preventDefault()
+    const addGame = async (e) => {
+      let req = await fetch('http://localhost:3000/games', {
+        method: 'POST', 
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify({
+          date: e.target.add_date.value,
+          result: e.target.add_result.value, 
+          score: e.target.add_score.value, 
+          location: e.taregt.add_location.value, 
+          st_pitcher: e.target.add_stp.value, 
+          note: e.target.add_note.value
+        })
+      })
+    }
+    addGame()
+  }
 
   return (
     <div>
@@ -96,10 +119,10 @@ function App() {
         <Route exact path='login' element={<Login handleLogin={handleLogin}/>} />
         <Route exact path='signup' element={<Signup handleSignupSubmit={handleSignupSubmit}/>} />
         <Route exact path='profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn}/>} />
-        <Route exact path='addgame' element={<AddGamePage/>} /> 
+        <Route exact path='addgame' element={<AddGamePage handleAddGameSubmit={handleAddGameSubmit} />} /> 
         <Route exact path='editgame' element={<EditGamePage/>} /> 
         <Route exact path='editprofile' element={<EditProfilePage/>} />
-      </Routes>
+      </Routes> 
     </div>
   )
 }
