@@ -21,7 +21,7 @@ class GamesController < ApplicationController
     end 
 
     def destroy 
-        game.find_by(id: params[:id])
+        game = Game.find_by(id: params[:id])
         game.destroy 
     end 
 
