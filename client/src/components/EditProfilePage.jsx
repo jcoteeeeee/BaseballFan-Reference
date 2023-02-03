@@ -12,7 +12,10 @@ const EditProfilePage = () => {
                 <input type='email' name='edit-email'/>
                 <br/>
                 <label>Password</label>
-                <input type='password' name='edit-password'/>
+                <input type='password' name='edit-password'/>  
+                <br/>
+                <label></label>
+                <button type='submit'>Save changes</button>
             </form>
         </div>
     )

@@ -72,8 +72,9 @@ function App() {
 
   // post request to create an account (for signup page) _________________
   const handleSignupSubmit = (e) => {
-    e.preventDefault()
-    const signup = async (e, users) => {
+    e.preventDefault() 
+    navigate('/profilepage') // right now it's not going to profilepage
+    const signup = async (e) => {
         let req  = await fetch(`http://localhost:3000/users`, {
           method: 'POST', 
           headers: {'Content-Type': 'application/json'},
@@ -85,8 +86,6 @@ function App() {
         })
     }
     signup()
-    // navigate('/profilepage')
-    console.log('submit')
   } 
   // _______________________________________________________________________
 
