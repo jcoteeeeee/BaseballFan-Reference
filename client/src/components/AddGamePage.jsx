@@ -1,10 +1,10 @@
 import Header from './Header.jsx'
 
-const AddGamePage = () => {
+const AddGamePage = ( {handleAddGameSubmit} ) => {
     return(
         <div>
             <Header/>
-            <form id='addgame-form'>
+            <form id='addgame-form' onSubmit={() => {handleAddGameSubmit}}>
                 <label>Date</label>
                 <input type='date' name='add_date' />
                 <br />
@@ -18,7 +18,8 @@ const AddGamePage = () => {
                 <input type='text' name='add_location' />
                 <br />
                 <label>Starting pitcher </label>  
-                <input type='text' name='add_stp'/>
+                <input type='text' name='add_stp'/>  
+                <br/>
                 <label>Note</label>
                 <input type='text' name='add_note' />
                 <br />
@@ -28,4 +29,4 @@ const AddGamePage = () => {
     )
 }  
 
-export default AddGamePage
+export default AddGamePage 

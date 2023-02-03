@@ -1,10 +1,10 @@
 import Header from './Header.jsx'  
 
-const EditGamePage = () => {
+const EditGamePage = ( {handleEditGameSubmit} ) => {
     return(
         <div>
-            <form>
-                <Header/>  
+            <Header/>  
+            <form id='editgame-form' onSubmit={() => {handleEditGameSubmit}}>
                 <label>Date</label>
                 <input type='date' name='date' />
                 <br />
