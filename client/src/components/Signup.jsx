@@ -6,10 +6,10 @@ const Signup = () => {
     const navigate = useNavigate()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
+    const [favTeam, setFavTeam] = useState('') 
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')  
-    const [favTeam, setFavTeam] = useState('')
 
     console.log(username)
 
@@ -18,7 +18,7 @@ const Signup = () => {
         console.log('submitted')
         navigate('/profilepage') // right now it's not going to profilepage
         const signup = async (e) => {
-            let req = await fetch(`http://localhost:3000/users`, {
+            let req = await fetch('http://localhost:3000/users', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

@@ -3,34 +3,55 @@ import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 
 const EditProfilePage = () => {  
-    const navigate = useNavigate() 
+    const navigate = useNavigate()  
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('') 
+    const [favTeam, setFavTeam] = useState('')
+    const [username, setUsername] = useState('') 
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleEditProSubmit = (e) => {
         e.preventDefault()
         console.log('submitted')  
+        const editProfile = async (e, user) => {
+            let req = await fetch(`http://localhost:3000/users/${user.id}`, {
+                method: 'PATCH', 
+                headers: {'Content-Type': 'application/json'}, 
+                body: JSON.stringify({
+                    first_name: firstName, 
+                    last_name: lastName,  
+                    fav_team: favTeam, 
+                    username: username, 
+                    email: email, 
+                    password: password 
+                })
+            }) 
+            editProfile() 
+        }
     }
 
     return(
         <div>
             <Header/> 
-            <form id='edit-profile-form'> 
+            <form id='edit-profile-form' onSubmit={handleEditProSubmit}> 
                 <label>First name</label>
-                <input type='text' name='edit-fn' /> 
+                <input value={firstName} type='text' name='edit-fn' onChange={(e) => setFirstName(e.target.value)}/> 
                 <br/> 
                 <label>Last name</label>  
-                <input type='text' id='edit-ln'/>
+                <input value={lastName} type='text' id='edit-ln' onChange={(e) => setLastName(e.target.value)}/>
                 <br/>
                 <label>Favorite team</label>
-                <input type='text' id='edit-favteam'/>    
+                <input value={favTeam} type='text' id='edit-favteam' onChange={(e) => setFavTeam(e.target.value)}/>    
                 <br/>
                 <label>Username</label>
-                <input type='text' name='edit-usrname'/>
+                <input value={username} type='text' name='edit-usrname' onChange={(e) => setUsername(e.target.value)}/>
                 <br/>
                 <label>Email</label>
-                <input type='email' name='edit-email'/>
+                <input value={email} type='email' name='edit-email' onChange={(e) => setEmail(e.target.value)}/>
                 <br/>
                 <label>Password</label>
-                <input type='password' name='edit-password'/>  
+                <input value={password} type='password' name='edit-password' onChange={(e) => setPassword(e.target.value)}/>  
                 <br/> 
                 <button type='submit'>Save changes</button>
             </form>

@@ -33,6 +33,7 @@ const EditGamePage = () => {
                 })
             })
         }
+        editGame()
     } 
 
     return(
