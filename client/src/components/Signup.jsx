@@ -44,7 +44,7 @@ const Signup = () => {
                 <label>Last name</label>
                 <input value={lastName} id='signup-ln' type='text' name='signup_ln' onChange={(e) => setLastName(e.target.value)} /> 
                 <br/>   
-                <label>Favorite Team</label>
+                <label>Favorite team</label>
                 <input value={favTeam} id='fav-team' type='text' name='favTeam' onChange={(e) => setFavTeam(e.target.value)}/>  
                 <br/>
                 <label>Username</label>

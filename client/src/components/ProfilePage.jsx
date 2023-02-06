@@ -27,7 +27,6 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                         <th>Opponent</th>
                         <th>Location</th>
                         <th>Starting Pitcher</th>
-                        <th>Cumulative Record</th>
                         <th>Note</th>
                     </tr>
                     {
@@ -51,6 +50,9 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                                     </th>
                                     <th>
                                         {game.st_pitcher}
+                                    </th>
+                                    <th>
+                                        {game.note}
                                     </th>
                                 </tr>  
                             )
