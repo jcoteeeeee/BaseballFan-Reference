@@ -38,7 +38,7 @@ const EditGamePage = () => {
     return(
         <div>
             <Header/>  
-            <form id='editgame-form' onSubmit={() => {handleEditGameSubmit}}>
+            <form id='editgame-form' onSubmit={handleEditGameSubmit}>
                 <label>Date</label>
                 <input value={date} type='date' name='edit_date' onChange={(e) => setDate(e.target.value)}/>
                 <br />
@@ -49,9 +49,11 @@ const EditGamePage = () => {
                 <input value={score} type='text' name='edit_score' onChange={(e) => setScore(e.target.value)}/>
                 <br />  
                 <label>Opponent</label>
-                <input value={opponent} type='text' name='edit_opp' onChange={(e) => setOpponent(e.target.value)}/>
+                <input value={opponent} type='text' name='edit_opp' onChange={(e) => setOpponent(e.target.value)}/>  
+                <br/>
                 <label>Location</label>
-                <input value={location} type='text' name='edit_location' onChange={(e) => setLocation(e.target.value)}/>
+                <input value={location} type='text' name='edit_location' onChange={(e) => setLocation(e.target.value)}/>  
+                <br/>
                 <label>Starting pitcher</label>
                 <input value={stPitcher} type='text' name='edit_stp' onChange={(e) => setStPitcher(e.target.value)}/>
                 <br />
