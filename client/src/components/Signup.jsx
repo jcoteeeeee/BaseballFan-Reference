@@ -4,6 +4,8 @@ import {useNavigate} from 'react-router-dom'
 
 const Signup = () => {
     const navigate = useNavigate()
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -18,6 +20,8 @@ const Signup = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    first_name: firstName,
+                    last_name: lastName, 
                     username: username,
                     email: email,
                     password: password
@@ -31,6 +35,12 @@ const Signup = () => {
         <div>
             <Header/>
             <form id='signup-form' onSubmit={handleSignupSubmit}>
+                <label>First name</label>
+                <input value={firstName} id='signup-fn' type='text' name='signup_fn' onChange={(e) => setFirstName(e.target.value)} />
+                <br/>
+                <label>Last name</label>
+                <input value={lastName} id='signup-ln' type='text' name='signup_ln' onChange={(e) => setLastName(e.target.value)} /> 
+                <br/>
                 <label>Username</label>
                 <input value={username} id='signup-usr' type='text' name='signup_usr' onChange={(e) => setUsername(e.target.value)}/> {/*make required later */}
                 <br/>
