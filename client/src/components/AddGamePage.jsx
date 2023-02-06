@@ -11,7 +11,14 @@ const AddGamePage = () => {
     const [stPitcher, setStPitcher] = useState('') 
     const [note, setNote] = useState('')
 
+    console.log(date)
+    console.log(result)  
     console.log(result) 
+    console.log(score) 
+    console.log(location) 
+    console.log(stPitcher)
+    console.log(note)
+
     
     function handleAddGameSubmit(e) {
         e.preventDefault()
