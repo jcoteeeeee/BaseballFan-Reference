@@ -8,7 +8,9 @@ const Signup = () => {
     const [lastName, setLastName] = useState('')
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [password, setPassword] = useState('')  
+    const [favTeam, setFavTeam] = useState('')
+
     console.log(username)
 
     const handleSignupSubmit = (e) => {
@@ -21,7 +23,8 @@ const Signup = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     first_name: firstName,
-                    last_name: lastName, 
+                    last_name: lastName,   
+                    fav_team: favTeam, 
                     username: username,
                     email: email,
                     password: password
@@ -40,6 +43,9 @@ const Signup = () => {
                 <br/>
                 <label>Last name</label>
                 <input value={lastName} id='signup-ln' type='text' name='signup_ln' onChange={(e) => setLastName(e.target.value)} /> 
+                <br/>   
+                <label>Favorite Team</label>
+                <input value={favTeam} id='fav-team' type='text' name='favTeam' onChange={(e) => setFavTeam(e.target.value)}/>  
                 <br/>
                 <label>Username</label>
                 <input value={username} id='signup-usr' type='text' name='signup_usr' onChange={(e) => setUsername(e.target.value)}/> {/*make required later */}
@@ -49,7 +55,7 @@ const Signup = () => {
                 <br/>
                 <label>Password</label>
                 <input value={password} id='signup-pass' type='password' name='signup_pass' onChange={(e) => setPassword(e.target.value)}/> {/*make required later */}
-                <br/>
+                <br/>  
                 <button type='submit'>Create account </button>
             </form>
         </div>
