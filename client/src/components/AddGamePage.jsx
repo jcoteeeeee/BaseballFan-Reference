@@ -29,6 +29,7 @@ const AddGamePage = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    user_id: 1, // needs to be changed later to variable. 1 is placeholder for now so post request works 
                     date: date, 
                     result: result,
                     score: score,
@@ -46,22 +47,22 @@ const AddGamePage = () => {
             <Header/>
             <form id='addgame-form' onSubmit={handleAddGameSubmit}>
                 <label>Date</label>
-                <input value={date} id='add-date' type='date' name='add_date' onChange={(e) => setDate(e.target.value)}/>
+                <input value={date} id='add-date' type='date' name='date' onChange={(e) => setDate(e.target.value)}/> {/* make required */}
                 <br />
                 <label>Result</label>
-                <input value={result} id='add-result' type='text' name='add_result' onChange={(e) => setResult(e.target.value)}/>
+                <input value={result} id='add-result' type='text' name='result' onChange={(e) => setResult(e.target.value)}/>
                 <br />
                 <label>Score</label>
-                <input value={score} id='add-score' type='text' name='add_score' onChange={(e) => setScore(e.target.value)}/>
+                <input value={score} id='add-score' type='text' name='score' onChange={(e) => setScore(e.target.value)}/>
                 <br />
                 <label>Location</label>
-                <input value={location} id='add-location' type='text' name='add_location' onChange={(e) => setLocation(e.target.value)}/>
+                <input value={location} id='add-location' type='text' name='location' onChange={(e) => setLocation(e.target.value)}/>
                 <br />
                 <label>Starting pitcher </label>  
-                <input value={stPitcher} id='add-stp' type='text' name='add_stp' onChange={(e) => setStPitcher(e.target.value)}/>  
+                <input value={stPitcher} id='add-stp' type='text' name='stPitcher' onChange={(e) => setStPitcher(e.target.value)}/>  
                 <br/>
                 <label>Note</label>
-                <input value={note} id='add-note' type='text' name='add_note' onChange={(e) => setNote(e.target.value)}/>
+                <input value={note} id='add-note' type='text' name='note' onChange={(e) => setNote(e.target.value)}/>
                 <br />
                 <button type='submit'>Add game</button>
             </form>    
