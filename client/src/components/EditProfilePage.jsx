@@ -14,6 +14,7 @@ const EditProfilePage = () => {
     const handleEditProSubmit = (e) => {
         e.preventDefault()
         console.log('submitted')  
+        navigate('/profilepage')
         const editProfile = async (e, user) => {
             let req = await fetch(`http://localhost:3000/users/${user.id}`, {
                 method: 'PATCH', 
@@ -39,7 +40,7 @@ const EditProfilePage = () => {
                 <input value={firstName} type='text' name='edit-fn' onChange={(e) => setFirstName(e.target.value)}/> 
                 <br/> 
                 <label>Last name</label>  
-                <input value={lastName} type='text' id='edit-ln' onChange={(e) => setLastName(e.target.value)}/>
+                <input value={lastName} type='text' id='edit-ln' onChange={(e) => setLastName(e.target.value)}></input>
                 <br/>
                 <label>Favorite team</label>
                 <input value={favTeam} type='text' id='edit-favteam' onChange={(e) => setFavTeam(e.target.value)}/>    

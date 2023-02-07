@@ -1,6 +1,6 @@
 import Header from './Header.jsx'
 
-const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn, handleDeleteGameSubmit} ) => {
+const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn } ) => {
     return(
         <div>
             <Header/> 
@@ -54,7 +54,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                                     <th>
                                         {game.note}
                                     </th>
-                                </tr>  
+                                </tr> 
                             )
                         })
                     }

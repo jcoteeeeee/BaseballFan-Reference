@@ -117,37 +117,37 @@ function App() {
 
   // ________________________________________________________________________ 
   // for editing game
-  const handleEditGameSubmit = (e) => {
-    e.preventDefault()
-    const updateGame = async (e, games) => {
-      let req = await fetch(`http://localhost:3000/games/${games.id}`, {
-        method: 'PATCH',
-        headers: {'Content-Type': 'application/json'}, 
-        body: JSON.stringify({
-          date: e.target.add_date.value,
-          result: e.target.add_result.value,
-          score: e.target.add_score.value,
-          location: e.taregt.add_location.value,
-          st_pitcher: e.target.add_stp.value,
-          note: e.target.add_note.value 
-        })
-      })
-    }
-    updateGame()
-  } 
+  // const handleEditGameSubmit = (e) => {
+  //   e.preventDefault()
+  //   const updateGame = async (e, games) => {
+  //     let req = await fetch(`http://localhost:3000/games/${games.id}`, {
+  //       method: 'PATCH',
+  //       headers: {'Content-Type': 'application/json'}, 
+  //       body: JSON.stringify({
+  //         date: e.target.add_date.value,
+  //         result: e.target.add_result.value,
+  //         score: e.target.add_score.value,
+  //         location: e.taregt.add_location.value,
+  //         st_pitcher: e.target.add_stp.value,
+  //         note: e.target.add_note.value 
+  //       })
+  //     })
+  //   }
+  //   updateGame()
+  // }   
   // ________________________________________________________________________ 
 
   // ________________________________________________________________________
   // for deleting game
-  const handleDeleteGameSubmit = (e) => {
-    e.preventDefault()
-    const deleteGame = async (e, games) => {
-      let req = await fetch(`http://localhost:3000/games/${games.id}`, {
-        method: 'DELETE'
-      })
-    }
-    deleteGame()
-  }
+  // const handleDeleteGameSubmit = (e) => {
+  //   e.preventDefault()
+  //   const deleteGame = async (e, games) => {
+  //     let req = await fetch(`http://localhost:3000/games/${games.id}`, {
+  //       method: 'DELETE'
+  //     })
+  //   }
+  //   deleteGame()
+  // }  
   // ________________________________________________________________________
 
   return (
@@ -156,9 +156,9 @@ function App() {
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login handleLogin={handleLogin}/>} />
         <Route exact path='signup' element={<Signup/>} />
-        <Route exact path='profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn}/>} handleDeleteGameSubmit={handleDeleteGameSubmit} />
+        <Route exact path='profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn}/>} />
         <Route exact path='addgame' element={<AddGamePage/>} /> 
-        <Route exact path='editgame' element={<EditGamePage handleEditGameSubmit={handleEditGameSubmit} />} /> 
+        <Route exact path='editgame' element={<EditGamePage/>} /> 
         <Route exact path='editprofile' element={<EditProfilePage/>} />
       </Routes> 
     </div>
