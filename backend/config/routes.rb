@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   patch 'games/:id', to: 'games#update'
   delete 'games/:id', to: 'games#destroy' 
 
-  post 'login', to: 'sessions#create'
+  post 'login', to: 'sessions#create'  
+  delete 'logout', to: 'sessions#destroy'  
 end 
