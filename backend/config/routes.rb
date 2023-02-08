@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   get 'games/:id', to: 'games#show'
   post 'games', to: 'games#create'
   patch 'games/:id', to: 'games#update'
-  delete 'games/:id', to: 'games#destroy'
+  delete 'games/:id', to: 'games#destroy' 
+
+  post 'login', to: 'sessions#create'
 end 
