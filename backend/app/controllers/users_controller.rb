@@ -12,14 +12,11 @@ class UsersController < ApplicationController
             render json: {error: 'Not authenticated'}, status: :unauthorized 
     end 
 
-    def create 
-        user = User.create(first_name: params[:first_name], last_name: params[:last_name], username: params[:username], email: params[:email], password: params[:password], fav_team: params[:fav_team], photo: params[:photo])
-        if user.valid? 
-            session[:user_id] = user.id
-            render json: user, status: created
-        else 
-            render json: {error: 'Could not create account'}, status: :unprocessable_entity
-    end 
+    def create
+        user = User.create(user_params)
+        session[:user_id] = user.id # this is the piece that logs a user in and keeps track of users info in subsequent requests.
+        render json: user, status: :created
+    end
 
     def update 
         user = User.find_by(id: params[:id])
@@ -35,5 +32,9 @@ class UsersController < ApplicationController
     def user_params
         params.premit(:usrname, :email, :password)
     end
+
+      def user_params
+      params.permit(:username, :email, :password, :password_confirmation)
+  end
     
 end
