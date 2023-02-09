@@ -4,14 +4,13 @@ class UsersController < ApplicationController
         render json: user 
     end 
 
-    def show 
-        user = User.find_by(id: params[:id]) 
-        if user 
-            render json: user, status: :ok 
-        else 
-            render json: {error: 'Not authenticated'}, status: :unauthorized 
+    def show
+        if current_user
+        render json: current_user, status: :ok
+    else
+        render json: "No current session stored", status: :unauthorized
     end 
-
+    
     def create
         user = User.create(user_params)
         session[:user_id] = user.id # this is the piece that logs a user in and keeps track of users info in subsequent requests.
