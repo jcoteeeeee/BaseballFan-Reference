@@ -1,8 +1,12 @@
 class SessionsController < ApplicationController  
     def create 
-        user = user.find_by(username: params[:username])
-        session[:user_id] = user.id 
-        render json: user 
+        user = User.find_by(username: params[:username])
+        if user&.authenticate(params[:password])
+            session[:user_id] = user.id 
+            render json: user, status: :okay 
+        else 
+            render json: {error: 'Invalid credentials'}, status: :unauthorized 
+        end 
     end 
 
     def destroy 
