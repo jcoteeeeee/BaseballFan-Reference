@@ -7,11 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "seeding user"
-User.create(first_name: 'NameOne', last_name: 'LastNameOne', username: 'userOne', email: 'example@gmail.com', password: '12345', fav_team: 'Mets', photo: './nothing')    
-User.create(first_name: 'NamtTwo', last_name: 'LastNameTwo', username: 'userTwo', email: 'fakeemail@gmail.com', password: 'abcde', fav_team: 'Phillies', photo: './nothing')     
-User.create(first_name: 'NameThree', last_name: 'LastNameThree', username: 'userThree', email: 'nothing@gmail.com', password: '11111', fav_team: 'Red Sox', photo: './nothing')     
-User.create(first_name: 'NameFour', last_name: 'LastNameFour', username: 'userFour', email: 'noemail@gmail.com', password: '12121', fav_team: 'Twins', photo: './nothing')     
-User.create(first_name: 'NameFive', last_name: 'LastNameFive', username: 'userFive', email: 'gmail@gmail.com', password: '00000', fav_team: 'Blue Jays', photo:'./nothing')
+User.create(first_name: 'NameOne', last_name: 'LastNameOne', username: 'userOne', email: 'example@gmail.com', password_digest: '12345', fav_team: 'Mets', photo: './nothing')    
+User.create(first_name: 'NamtTwo', last_name: 'LastNameTwo', username: 'userTwo', email: 'fakeemail@gmail.com', password_digest: 'abcde', fav_team: 'Phillies', photo: './nothing')     
+User.create(first_name: 'NameThree', last_name: 'LastNameThree', username: 'userThree', email: 'nothing@gmail.com', password_digest: '11111', fav_team: 'Red Sox', photo: './nothing')     
+User.create(first_name: 'NameFour', last_name: 'LastNameFour', username: 'userFour', email: 'noemail@gmail.com', password_digest: '12121', fav_team: 'Twins', photo: './nothing')     
+User.create(first_name: 'NameFive', last_name: 'LastNameFive', username: 'userFive', email: 'gmail@gmail.com', password_digest: '00000', fav_team: 'Blue Jays', photo:'./nothing')
 
 Game.create(user_id: User.first.id, date: '2022-04-10', result: 'Win', score: '5-1', opponent: 'Phillies', location: 'Citi Field', st_pitcher: 'Max Scherzer', note: 'Great game.') 
 Game.create(user_id: User.first.id, date: '2022-08-18', result: 'Loss', score: '2-5', opponent: 'Angels', location: 'Citi Field', st_pitcher: 'Jacob deGrom', note: 'Cool game.') 
