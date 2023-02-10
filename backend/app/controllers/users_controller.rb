@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         else 
             render json: {error: 'Not authenticated'}, status: :unauthorized 
         end
-
+    end 
     
     def create
         user = User.create(user_params)
