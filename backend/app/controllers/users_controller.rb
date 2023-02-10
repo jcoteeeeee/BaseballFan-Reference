@@ -1,15 +1,17 @@
 class UsersController < ApplicationController 
+
     def index 
-        user = User.all 
-        render json: user 
+        render json: User.all 
     end 
 
-    def show
-        if current_user
-        render json: current_user, status: :ok
-    else
-        render json: "No current session stored", status: :unauthorized
-    end 
+    def show 
+        user = User.find_by(id: params[:id]) 
+        if user 
+            render json: user, status: :ok 
+        else 
+            render json: {error: 'Not authenticated'}, status: :unauthorized 
+        end
+
     
     def create
         user = User.create(user_params)
@@ -32,8 +34,7 @@ class UsersController < ApplicationController
         params.premit(:usrname, :email, :password)
     end
 
-      def user_params
-      params.permit(:username, :email, :password, :password_confirmation)
-  end
-    
+    def user_params
+        params.permit(:username, :email, :password, :password_confirmation)
+    end 
 end
