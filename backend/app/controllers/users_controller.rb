@@ -1,7 +1,7 @@
 class UsersController < ApplicationController 
+
     def index 
-        user = User.all 
-        render json: user 
+        render json: User.all 
     end 
 
     def show 
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
             render json: user, status: :ok 
         else 
             render json: {error: 'Not authenticated'}, status: :unauthorized 
+        end
     end 
 
     def create
@@ -33,8 +34,7 @@ class UsersController < ApplicationController
         params.premit(:usrname, :email, :password)
     end
 
-      def user_params
-      params.permit(:username, :email, :password, :password_confirmation)
-  end
-    
+    def user_params
+        params.permit(:username, :email, :password, :password_confirmation)
+    end 
 end
