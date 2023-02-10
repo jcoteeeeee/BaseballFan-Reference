@@ -11,8 +11,8 @@ class UsersController < ApplicationController
         else 
             render json: {error: 'Not authenticated'}, status: :unauthorized 
         end
-    end 
 
+    
     def create
         user = User.create(user_params)
         session[:user_id] = user.id # this is the piece that logs a user in and keeps track of users info in subsequent requests.
