@@ -6,10 +6,10 @@ const Login = ( {handleLogin} ) => {
             <Header/> 
             <form id='login-form' onSubmit={handleLogin}>
                 <label>Email</label>
-                <input id='email' name='email'/> {/*make required later */}
+                <input id='email' name='email' /> {/*make required later */}
                 <br/>
                 <label>Password</label>
-                <input id='password' name='password'/> {/*make required later */}
+                <input id='password' name='password' /> {/*make required later */}
                 <br/>
                 <button type='submit'>Login</button>
             </form>
