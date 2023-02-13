@@ -21,7 +21,7 @@ const Homepage = ( {handleLogBtnClick, handleSignupClick} ) => {
         <div id='homepage'>
             <div id='home-top'> 
                 <Header/>
-                <img id='home-photo' src='./photos/bfr-homepage.png' /> 
+                <img id='home-photo' src='./photos/bfref-homepage.png' /> 
                 <h2 id='slogan'>A place for baseball fans to record their own history </h2> 
             </div>
             <hr/>

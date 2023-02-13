@@ -16,15 +16,15 @@
 } 
 
 #home-photo {
-    width: 400px;
-    height: 200px;
+    width: 700px;
+    height: 300px;
     top: 30%;
-    left: 35%; 
+    left: 23%; 
     position: absolute; 
 }  
 
 #to-login { 
-    top: 80%; 
+    top: 82%; 
     left: 46%;
     position: absolute; 
     font-size: 12px; 
@@ -66,17 +66,23 @@ hr {
 
 #login-form h2 {
     font-size: 20px; 
+    font-family: Verdana, sans-serif; 
+    color: rgb(6, 6, 87); 
     top: 1%;  
     position: absolute; 
-}
+} 
+
+.login-label {
+    font-size: 16px;
+    display: inline-block
+} 
 
 .login-input {
-    margin: 1 rem 0;
-}
-
-label {
-    text-align: left 
+    width: 150px; 
 } 
+
+
+
 
 
 
