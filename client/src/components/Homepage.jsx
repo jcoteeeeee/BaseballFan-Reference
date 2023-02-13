@@ -20,7 +20,7 @@ const Homepage = ( {handleLogBtnClick, handleSignupClick} ) => {
     return(
         <div>
             <Header/>
-            <img src='./photos/bfr-homepage.png' />
+            <img id='home-photo' src='./photos/bfr-homepage.png' />
             <button onClick={handleLogBtnClick}>Login</button>
             <p onClick={handleSignupClick}>or signup</p> 
 
