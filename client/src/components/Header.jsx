@@ -6,7 +6,7 @@ const Header = () => {
         navigate('/')
     }
     return(
-        <div>
+        <div id='header'>
             <img id='logo' onClick={handleLogoClick} src='./photos/bfr-logo.png'/>
         </div>
     )

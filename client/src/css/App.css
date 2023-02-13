@@ -1,8 +1,56 @@
-#logo {
-    text-align: center; 
-    width: 210px;
+/* For header */
+#header {
+    display: flex; 
+    justify-content: center; 
 }
 
+/* For homepage */ 
+#slogan {
+    font-size: 15px;  
+    font-style: italic; 
+    /* font-family: ; */
+    color: navy;
+    top: 20%; 
+    left: 38%;
+    position: absolute;
+} 
+
+#home-photo {
+    width: 400px;
+    height: 200px;
+    top: 30%;
+    left: 35%; 
+    position: absolute; 
+}  
+
+#to-login { 
+    top: 80%; 
+    left: 46%;
+    position: absolute; 
+    font-size: 12px; 
+    font-family: Verdana, sans-serif;
+    color: white;
+    background-color: navy;
+    padding: 10px 30px;
+}
+
+#to-signup {
+    top: 88%; 
+    left: 46.5%; 
+    position: absolute; 
+    font-family: Verdana, sans-serif; 
+    color: navy; 
+}  
+
+hr {
+    width: 70%; 
+    top: 25%;  
+    left: 16%;
+    position: absolute; 
+    height: 2px; 
+    background-color: navy;
+}
+/* For login */
 #login-form {
     overflow: hidden;
     background-color: white;
@@ -10,6 +58,7 @@
     border-radius: 10px;
     position: absolute;
     top: 50%;
-    left: 50%;
-    width: 200px;
+    left: 40%;
+    width: 200px; 
+    border-radius: 5px;
 }
