@@ -1,4 +1,4 @@
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom' 
 
 const Header = () => {
     const navigate = useNavigate()           
@@ -7,7 +7,7 @@ const Header = () => {
     }
     return(
         <div>
-            <h2 onClick={handleLogoClick}>Logo</h2>
+            <img onClick={handleLogoClick} src='./photos/bfr-logo.png'/>
         </div>
     )
 }
