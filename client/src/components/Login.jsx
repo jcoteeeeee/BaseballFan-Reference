@@ -6,11 +6,11 @@ const Login = ( {handleLogin} ) => {
             <Header/> 
             <form id='login-form' onSubmit={handleLogin}> 
                 <h2>Login</h2>
-                <label>Email</label>
-                <input id='email' className='login-input' name='email' /> {/*make required later */}
+                <label className='login-label'>Email</label>
+                <input id='email' className='login-input' name='email' align='left'/> {/*make required later */}
                 <br/>
-                <label>Password</label>
-                <input id='password' className='login-input' name='password' /> {/*make required later */}
+                <label className='login-label'>Password</label>
+                <input id='password' className='login-input' name='password' align='left'/> {/*make required later */}
                 <br/> 
                 <button type='submit'>Login</button>
             </form>
