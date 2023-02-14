@@ -8,6 +8,7 @@ const Header = () => {
     return(
         <div id='header'>
             <img id='logo' onClick={handleLogoClick} src='./photos/bfr-logo.png'/>  
+            <hr /> 
         </div>
     )
 }

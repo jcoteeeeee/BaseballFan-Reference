@@ -9,7 +9,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                 <p>Favorite team: </p>
                 <p>First game attended: </p>
                 <p>Total games attended: </p>
-                <button id='edit-profile-btn' onClick={handleEditProfileBtn}>Edit profile</button> 
+                {/* <button id='edit-profile-btn' onClick={handleEditProfileBtn}>Edit profile</button>  */}
             </div>
             <div>
                 <h3>Record</h3>
