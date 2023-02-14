@@ -41,7 +41,7 @@ const Signup = () => {
                 <form id='signup-form' onSubmit={handleSignupSubmit}> 
                     <h2>Sign up</h2>
                     <label className='signup-label'>First name</label>
-                    <input value={firstName} id='signup-fn' className='signup-input' type='text' name='signup_fn' onChange={(e) => setFirstName(e.target.value)} />
+                    <input value={firstName} id='signup-fn' className='signup-input' type='text' name='signup_fn' onChange={(e) => setFirstName(e.target.value)} /> 
                     <br/>
                     <label className='signup-label'>Last name</label>
                     <input value={lastName} id='signup-ln' className='signup-input' type='text' name='signup_ln' onChange={(e) => setLastName(e.target.value)} /> 
