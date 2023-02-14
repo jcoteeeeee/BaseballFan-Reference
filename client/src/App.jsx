@@ -43,7 +43,7 @@ function App() {
 
   const handleEditProfileBtn = () => {
     navigate('/editprofile')
-  }
+  } 
 
   // _____________________________________________________________________
   //get request for all users 
