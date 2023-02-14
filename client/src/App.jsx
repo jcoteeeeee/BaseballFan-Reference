@@ -4,7 +4,8 @@ import Login from './components/Login'
 import Signup from'./components/Signup'   
 import AddGamePage from './components/AddGamePage'  
 import EditGamePage from './components/EditGamePage'  
-import EditProfilePage from './components/EditProfilePage'
+import EditProfilePage from './components/EditProfilePage'  
+import AboutPage from './components/AboutPage'
 import {Routes, Route, useNavigate} from 'react-router-dom'
 import {useEffect, useState} from 'react'  
 
@@ -29,10 +30,6 @@ function App() {
     navigate('/profilepage')
   }
 
-  // // takes you from signup page to profile page 
-  // const handleSignup = () => {
-  //   navigate('/profilepage')
-  // } 
 
   // takes you from profile page to addgamepage 
   const handleAddGameBtn = () => {
@@ -80,7 +77,8 @@ function App() {
         <Route exact path='profilepage' element={<ProfilePage games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn}/>} />
         <Route exact path='addgame' element={<AddGamePage/>} /> 
         <Route exact path='editgame' element={<EditGamePage/>} /> 
-        <Route exact path='editprofile' element={<EditProfilePage/>} />
+        {/* <Route exact path='editprofile' element={<EditProfilePage/>} />  */}
+        <Route exact path='about' element={<AboutPage/>} />
       </Routes> 
     </div>
   )

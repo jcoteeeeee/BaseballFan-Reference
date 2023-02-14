@@ -4,6 +4,22 @@
     justify-content: center; 
 }
 
+#to-about {
+    position: absolute; 
+    left: 18%; 
+    top: 20%;
+    color: rgb(6, 6, 87); 
+    font-size: 16px;     
+}
+
+#to-follow {
+    position: absolute; 
+    left: 79%; 
+    top: 20%; 
+    color: rgb(6, 6, 87); 
+    font-size: 16px; 
+}
+
 /*  ________________________________    */
 /* For homepage */ 
 #slogan {

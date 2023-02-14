@@ -21,10 +21,10 @@ const Homepage = ( {handleLogBtnClick, handleSignupClick} ) => {
         <div id='homepage'>
             <div id='home-top'> 
                 <Header/>
-                <img id='home-photo' src='./photos/bfref-homepage.png' /> 
-                <h2 id='slogan'>A place for baseball fans to record their own history </h2> 
             </div>
-            <hr/>
+            <div>
+                <img id='home-photo' src='./photos/bfref-homepage.png' /> 
+            </div>
             <div id='log-sig'>
                 <button id='to-login' onClick={handleLogBtnClick}>Login</button>
                 <p id='to-signup' onClick={handleSignupClick}>or signup</p> 

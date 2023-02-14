@@ -2,6 +2,8 @@ import Header from './Header.jsx'
 import {useState} from 'react'  
 import {useNavigate} from 'react-router-dom'
 
+// for future use 
+
 const EditProfilePage = () => {  
     const navigate = useNavigate()  
     const [firstName, setFirstName] = useState('')
