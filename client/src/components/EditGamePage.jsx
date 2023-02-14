@@ -39,30 +39,32 @@ const EditGamePage = () => {
     return(
         <div>
             <Header/>  
-            <form id='editgame-form' onSubmit={handleEditGameSubmit}>
-                <label className='game-label'>Date</label>
-                <input value={date} type='date' name='edit_date' onChange={(e) => setDate(e.target.value)}/>
-                <br />
-                <label className='game-label'>Result</label>
-                <input value={result} type='text' name='edit_result' onChange={(e) => setResult(e.target.value)}/>
-                <br />
-                <label className='game-label'>Score</label>
-                <input value={score} type='text' name='edit_score' onChange={(e) => setScore(e.target.value)}/>
-                <br />  
-                <label className='game-label'>Opponent</label>
-                <input value={opponent} type='text' name='edit_opp' onChange={(e) => setOpponent(e.target.value)}/>  
-                <br/>
-                <label className='game-label'>Location</label>
-                <input value={location} type='text' name='edit_location' onChange={(e) => setLocation(e.target.value)}/>  
-                <br/>
-                <label className='game-label'>Starting pitcher</label>
-                <input value={stPitcher} type='text' name='edit_stp' onChange={(e) => setStPitcher(e.target.value)}/>
-                <br />
-                <label className='game-label'>Note</label>
-                <input value={note} type='text' name='edit_note' onChange={(e) => setNote(e.target.value)}/>
-                <br />
-                <button type='submit'>Save changes</button>
-            </form>    
+            <div className='game-container'> 
+                <form id='editgame-form' className='game-form' onSubmit={handleEditGameSubmit}>
+                    <label className='game-label'>Date</label>
+                    <input className='game-input' value={date} type='date' name='edit_date' onChange={(e) => setDate(e.target.value)}/>
+                    <br />
+                    <label className='game-label'>Result</label>
+                    <input className='game-input' value={result} type='text' name='edit_result' onChange={(e) => setResult(e.target.value)}/>
+                    <br />
+                    <label className='game-label'>Score</label>
+                    <input className='game-input' value={score} type='text' name='edit_score' onChange={(e) => setScore(e.target.value)}/>
+                    <br />  
+                    <label className='game-label'>Opponent</label>
+                    <input className='game-input' value={opponent} type='text' name='edit_opp' onChange={(e) => setOpponent(e.target.value)}/>  
+                    <br/>
+                    <label className='game-label'>Location</label>
+                    <input className='game-input' value={location} type='text' name='edit_location' onChange={(e) => setLocation(e.target.value)}/>  
+                    <br/>
+                    <label className='game-label'>Starting pitcher</label>
+                    <input className='game-input' value={stPitcher} type='text' name='edit_stp' onChange={(e) => setStPitcher(e.target.value)}/>
+                    <br />
+                    <label className='game-label'>Note</label>
+                    <input className='game-input' value={note} type='text' name='edit_note' onChange={(e) => setNote(e.target.value)}/>
+                    <br />
+                    <button className='game-btn' type='submit'>Save changes</button> 
+                </form>     
+            </div> 
         </div>
     )
 }  
