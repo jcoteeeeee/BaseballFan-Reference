@@ -2,7 +2,9 @@ import Header from './Header.jsx'
 import {useState} from 'react' 
 import {useNavigate} from 'react-router-dom'
 
-const AddGamePage = () => { 
+const AddGamePage = ({ currentUser }) => { 
+    const [userId, setUserId] = useState(currentUser.user_data)
+    console.log(userId)
     const navigate = useNavigate()
     const [date, setDate] = useState('')
     const [result, setResult] = useState('')
@@ -30,7 +32,7 @@ const AddGamePage = () => {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    user_id: 1, // needs to be changed later to variable. 1 is placeholder for now so post request works 
+                    user_id: userId, // needs to be changed later to variable. 1 is placeholder for now so post request works 
                     date: date, 
                     result: result,
                     score: score,  
