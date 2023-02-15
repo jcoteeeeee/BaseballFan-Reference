@@ -262,9 +262,13 @@ hr {
     opacity: 0.8;
 }
 
+/* ___________________________ */
+/* for profilepage */
 
-
-
+#bio p{
+    font-family: Verdana, sans-serif; 
+    color: rgb(6, 6, 87); 
+}
 
 
 
