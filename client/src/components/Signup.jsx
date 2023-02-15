@@ -5,6 +5,10 @@ import http from './axios/http'
 
 const Signup = () => {
     const [loginData, setLoginData] = useState({
+        first_name: '',
+        last_name: '',
+        fav_team: '',
+        username: '',
         email: '',
         password: '',
     })
@@ -35,16 +39,16 @@ const Signup = () => {
                 <form id='signup-form' onSubmit={handleSubmit}> 
                     <h2>Sign up</h2>
                     <label className='signup-label'>First name</label>
-                    <input className='signup-input' onChange={handleSignup} />
+                    <input className='signup-input' name='first_name' onChange={handleSignup} />
                     <br/>
                     <label className='signup-label'>Last name</label> 
-                    <input className='signup-input' onChange={handleSignup} /> 
+                    <input className='signup-input' name='last_name' onChange={handleSignup} /> 
                     <br/>
                     <label className='signup-label'>Favorite team</label>
-                    <input className='signup-input' onChange={handleSignup}/>
+                    <input className='signup-input' name='fav_team' onChange={handleSignup} />
                     <br/>
                     <label className='signup-label'>Username</label> 
-                    <input className='signup-input' onChange={handleSignup} />
+                    <input className='signup-input' name='username' onChange={handleSignup}/>
                     <br/>
                     <label className='signup-label'>Email</label>
                     <input id='signup-email' className='signup-input' name='email' type='email' onChange={handleSignup} /> {/*make required later */}

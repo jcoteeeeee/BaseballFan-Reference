@@ -21,7 +21,6 @@ class UsersController < ApplicationController
 
     def create
         user = User.create!(first_name: params[:first_name], last_name: params[:last_name], fav_team: params[:fav_team], username: params[:username], email: params[:email], password: params[:password]) 
-        pp user 
         if user.valid?
             render json: user
         else
