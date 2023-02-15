@@ -4,17 +4,17 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
     return(
         <div>
             <Header/> 
-            <div>
+            <div id='bio'>
                 <p>@profilename</p>
                 <p>Favorite team: </p>
-                <p>First game attended: </p>
-                <p>Total games attended: </p>
+                {/* <p>First game attended: </p>
+                <p>Total games attended: </p>  */}
                 {/* <button id='edit-profile-btn' onClick={handleEditProfileBtn}>Edit profile</button>  */}
             </div>
-            <div>
+            {/* <div>
                 <h3>Record</h3>
                 <h3>percentage </h3>
-            </div>
+            </div>  */}
             <button id='addgame' onClick={handleAddGameBtn}>
                 Add game
                 </button>
