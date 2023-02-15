@@ -89,7 +89,10 @@ hr {
  /*  ________________________________________________________ */
 /* For login */
 #login-container{
-    margin: auto; 
+    /* margin: auto;  */
+    position: absolute; 
+    left: 30.5%; 
+    top: 30%;
     width: 500px; 
     height: 370px;
 }
@@ -134,8 +137,8 @@ hr {
     font-size: 20px; 
     border: none;  
     border-radius: 8px; 
-    top: 75%; 
-    left: 43%; 
+    top: 80%; 
+    left: 33%; 
     position: absolute; 
 }
 
@@ -147,9 +150,12 @@ hr {
 /* for signup */ 
 
 #signup-container{
-    margin: auto; 
+    /* margin: auto;   */
+    position: absolute; 
+    left: 26.5%;
+    top: 30%;
     width: 600px; 
-    height: 580px; 
+    height: 500px; 
 } 
 
 #signup-form {
@@ -169,14 +175,14 @@ hr {
 
 .signup-label {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    font-size: 20px; 
+    font-size: 16px; 
     color: rgb(239, 240, 240); 
     margin-bottom: 20px;  
 } 
 
 .signup-input {
     width: 100%; 
-    height: 30px; 
+    height: 20px; 
     border-radius: 5px; 
     border: 1px solid rgb(6, 6, 87); 
     font-size: 16px;
@@ -192,8 +198,8 @@ hr {
     font-size: 20px; 
     border: none;  
     border-radius: 8px; 
-    top: 115%; 
-    left: 43%; 
+    top: 90%; 
+    left: 35%; 
     position: absolute; 
 }
 
@@ -205,7 +211,10 @@ hr {
 /* for addgame page and editgamepage */ 
 
 .game-container {
-    margin: auto; 
+    /* margin: auto;     */
+    position: absolute; 
+    left: 30.5%; 
+    top: 29%;
     width: 500px; 
     height: 400px;   
 } 
@@ -244,8 +253,8 @@ hr {
     font-size: 20px; 
     border: none;  
     border-radius: 20px; 
-    top: 87%; 
-    left: 43%; 
+    top: 94%; 
+    left: 34%; 
     position: absolute;  
 }
 
