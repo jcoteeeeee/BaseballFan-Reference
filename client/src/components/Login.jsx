@@ -33,10 +33,10 @@ const Login = ( ) => {
                 <form id='login-form' onSubmit={handleSubmit}> 
                     <h2>Login</h2>
                     <label className='login-label'>Email</label>
-                    <input id='email' className='login-input' name='email' align='left' onChange={handleLogin}/> {/*make required later */}
+                    <input id='email' className='login-input' name='email' type='email' onChange={handleLogin} required /> 
                     <br/>
                     <label className='login-label'>Password</label>
-                    <input id='password' className='login-input' name='password' align='left' onChange={handleLogin} /> {/*make required later */}
+                    <input id='password' className='login-input' name='password' type='password' onChange={handleLogin} required /> 
                     <br/> 
                     <button id='login-btn' type='submit'>Login</button> 
                 </form> 
