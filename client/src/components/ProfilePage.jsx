@@ -1,12 +1,26 @@
-import Header from './Header.jsx'
+import Header from './Header.jsx' 
+import { useState, useRef, useEffect, react } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
-const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn } ) => {
+const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn, currentUser } ) => {
+    const [user, setUser] = useState(currentUser)
+    const navigate = useNavigate()
+
+ const logginOut = () => {
+    localStorage.removeItem('token')
+    navigate('/')
+ }
+    
     return(
         <div>
             <Header/> 
-            <div id='bio'>
-                <p>@profilename</p>
+            <div id='bio'>  
+                <>
+                    <h3></h3>
+                </>
+                <p>@profilename:</p>
                 <p>Favorite team: </p>
+                <button onClick={()=>{logginOut()}}>Log out</button>
                 {/* <p>First game attended: </p>
                 <p>Total games attended: </p>  */}
                 {/* <button id='edit-profile-btn' onClick={handleEditProfileBtn}>Edit profile</button>  */}
