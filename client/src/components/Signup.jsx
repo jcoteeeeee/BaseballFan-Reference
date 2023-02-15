@@ -12,7 +12,7 @@ const Signup = () => {
 
     const navigate = useNavigate()
 
-    const handleLogin = (e) => {
+    const handleSignup = (e) => {
         const { name, value } = e.target
         setLoginData((prev) => {
             return { ...prev, [name]: value };
@@ -22,8 +22,10 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const { data } = await http.post("/signup", loginData) 
-        alert('Account created!') 
+        alert('Account created! Return to homepage and log in.') 
         navigate('/')
+        console.log(data) 
+        console.log(e)
     } 
 
     return(
@@ -32,11 +34,23 @@ const Signup = () => {
             <div id='signup-container'> 
                 <form id='signup-form' onSubmit={handleSubmit}> 
                     <h2>Sign up</h2>
-                    <label className='login-label'>Email</label>
-                    <input id='email' className='login-input' name='email' type='email' onChange={handleLogin} /> {/*make required later */}
+                    <label className='signup-label'>First name</label>
+                    <input className='signup-input' onChange={handleSignup} />
+                    <br/>
+                    <label className='signup-label'>Last name</label> 
+                    <input className='signup-input' onChange={handleSignup} /> 
+                    <br/>
+                    <label className='signup-label'>Favorite team</label>
+                    <input className='signup-input' onChange={handleSignup}/>
+                    <br/>
+                    <label className='signup-label'>Username</label> 
+                    <input className='signup-input' onChange={handleSignup} />
+                    <br/>
+                    <label className='signup-label'>Email</label>
+                    <input id='signup-email' className='signup-input' name='email' type='email' onChange={handleSignup} /> {/*make required later */}
                     <br />
-                    <label className='login-label'>Password</label>
-                    <input id='password' className='login-input' name='password' type='password' onChange={handleLogin} /> {/*make required later */}
+                    <label className='signup-label'>Password</label>
+                    <input id='signup-password' className='signup-input' name='password' type='password' onChange={handleSignup} /> {/*make required later */}
                     <br />
                     <button id='signup-btn' type='submit'>Create account </button>
                 </form>  

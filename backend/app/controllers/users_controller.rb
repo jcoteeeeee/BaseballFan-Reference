@@ -13,10 +13,20 @@ class UsersController < ApplicationController
         end
     end 
     
+    # def create
+    #     user = User.create(user_params)
+    #     session[:user_id] = user.id # this is the piece that logs a user in and keeps track of users info in subsequent requests.
+    #     render json: user, status: :created
+    # end 
+
     def create
-        user = User.create(user_params)
-        session[:user_id] = user.id # this is the piece that logs a user in and keeps track of users info in subsequent requests.
-        render json: user, status: :created
+        user = User.create!(first_name: params[:first_name], last_name: params[:last_name], fav_team: params[:fav_team], username: params[:username], email: params[:email], password: params[:password]) 
+        pp user 
+        if user.valid?
+            render json: user
+        else
+            render json: user.errors.full_messages, status: :unprocessable_entity
+        end
     end
 
     def update 
@@ -30,11 +40,7 @@ class UsersController < ApplicationController
         user.destroy  
     end 
 
-    def user_params
-        params.premit(:usrname, :email, :password)
-    end
-
-    def user_params
-        params.permit(:username, :email, :password, :password_confirmation)
-    end 
+    # def user_params
+    #     params.permit(:username, :email, :password, :password_confirmation)
+    # end 
 end
