@@ -6,7 +6,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
     const [user, setUser] = useState(currentUser)
     const navigate = useNavigate()
 
- const logginOut = () => {
+ const loggingOut = () => {
     localStorage.removeItem('token')
     navigate('/')
  }
@@ -15,12 +15,9 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
         <div>
             <Header/> 
             <div id='bio'>  
-                <>
-                    <h3></h3>
-                </>
                 <p>@profilename:</p>
                 <p>Favorite team: </p>
-                <button onClick={()=>{logginOut()}}>Log out</button>
+                <button onClick={()=>{loggingOut()}}>Log out</button>
                 {/* <p>First game attended: </p>
                 <p>Total games attended: </p>  */}
                 {/* <button id='edit-profile-btn' onClick={handleEditProfileBtn}>Edit profile</button>  */}
