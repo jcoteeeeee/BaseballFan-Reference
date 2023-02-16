@@ -268,7 +268,29 @@ hr {
 #bio p{
     font-family: Verdana, sans-serif; 
     color: rgb(6, 6, 87); 
+}  
+
+/* #game-table{
+    display: flex;
+}  */
+
+.table-category{
+    border: 1px solid rgb(6, 6, 87); 
+    height: 25px; 
+    width: 300px;
 }
+
+.table-content{
+
+    flex: 10%;
+    border: 1px solid rgb(6, 6, 87);
+    height: 25px;
+} 
+
+#game{
+    display: flex;
+}  
+
 
 
 
