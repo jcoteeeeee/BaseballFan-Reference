@@ -14,10 +14,12 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
     return(
         <div>
             <Header/> 
+            <div id='logoutbtn-div'>
+                <button id='logout-btn' onClick={() => { loggingOut() }}>Log out</button>
+            </div>
             <div id='bio'>  
                 <p>@profilename:</p>
                 <p>Favorite team: </p>
-                <button onClick={()=>{loggingOut()}}>Log out</button>
                 {/* <p>First game attended: </p>
                 <p>Total games attended: </p>  */}
                 {/* <button id='edit-profile-btn' onClick={handleEditProfileBtn}>Edit profile</button>  */}
@@ -26,7 +28,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                 <h3>Record</h3>
                 <h3>percentage </h3>
             </div>  */}
-            <button id='addgame' onClick={handleAddGameBtn}>
+            <button id='addgame-btn' onClick={handleAddGameBtn}>
                 Add game
                 </button><br />
             <div id='game-table'>
@@ -43,27 +45,26 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                     games.map((game) => {
                         return(
                             <div id='game' style={{ display: 'flex', border: '1px solid rgb(6, 6, 87) ' }}>
-                                <div className='table-content' style={{display:'flex'}}>
-                                    {/* <div style={{flex:'50%'}}><button>X</button></div>
-                                    <div style={{ flex: '50%', textAlign:'end'}}>{game.date}</div> */}
-                                 </div>
+                                <div className='table-content'>{game.date}</div>  
                                 <div className='table-content'>{game.result}</div>
                                 <div className='table-content'>{game.score}</div>
                                 <div className='table-content'>{game.opponent}</div>
                                 <div className='table-content'>{game.location}</div>  
                                 <div className='table-content'>{game.st_pitcher}</div>
-                                <div className='table-content'>{game.note} 
-                                    <div style={{ flex: '50%' }}><button onSubmit={() => { handleDeleteGameSubmit }}>X</button></div>
+                                <div id='game-note' className='table-content' style={{display: 'flex'}}>
+                                    <div style={{ flex: '50%', textAlign: 'left' }}>{game.note}</div> 
+                                    <div style={{ flex: '50%', textAlign: 'right'}}>
+                                        <button id='deletegame-btn' onSubmit={() => { handleDeleteGameSubmit }}>X</button>
+                                    </div>
                                 </div>
-                                {/* <button>X</button>  */}
                             </div>  
                         )
                     })
                 }
             </div>
-            <button id='editgame' onClick={handleEditGameBtn}>Edit game</button> 
+            {/* <button id='editgame' onClick={handleEditGameBtn}>Edit game</button> 
             <br/>
-            <button onSubmit={() => {handleDeleteGameSubmit}}>Delete game</button>
+            <button onSubmit={() => {handleDeleteGameSubmit}}>Delete game</button> */}
         </div>
     )
 }
