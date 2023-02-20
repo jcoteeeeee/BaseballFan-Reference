@@ -2,7 +2,7 @@ import Header from './Header.jsx'
 import { useState, useRef, useEffect, react } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 
-const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn, currentUser } ) => {
+const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn, currentUser, handleDeleteGameSubmit} ) => {
     const [user, setUser] = useState(currentUser)
     const navigate = useNavigate()
 
@@ -18,7 +18,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                 <button id='logout-btn' onClick={() => { loggingOut() }}>Log out</button>
             </div>
             <div id='bio'>  
-                <p>@profilename:</p>
+                <p>@profilename</p>
                 <p>Favorite team: </p>
                 {/* <p>First game attended: </p>
                 <p>Total games attended: </p>  */}
@@ -54,7 +54,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                                 <div id='game-note' className='table-content' style={{display: 'flex'}}>
                                     <div style={{ flex: '50%', textAlign: 'left' }}>{game.note}</div> 
                                     <div style={{ flex: '50%', textAlign: 'right'}}>
-                                        <button id='deletegame-btn' onSubmit={() => { handleDeleteGameSubmit }}>X</button>
+                                        <button id='deletegame-btn' onClick={handleDeleteGameSubmit}>X</button>
                                     </div>
                                 </div>
                             </div>  

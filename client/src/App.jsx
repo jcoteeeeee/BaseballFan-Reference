@@ -79,30 +79,21 @@ function App() {
     requestGames()
   }, []) 
 
-  // useEffect(() => {
-  //   const loadUser = async () => {
-  //     let req = await fetch("/me", {
-  //       headers: { Authorization: Cookies.get('token') }
-  //     })
-  //     let res = await req.json()
-  //     if (res.user) setUser(res.user)
-  //   }
-  //   if (Cookies.get('token')) loadUser()
-  // }, [])
+  const handleDeleteGameSubmit = (games) => {
+    console.log('clicked')
+    const destroy = async () => {
+      let req = await fetch(`http://localhost:3000/${games.id}`, {
+        method: 'DELETE', 
+        headers: {'Content-Type': 'application/json'}
+     })
+    }
+    destroy()
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
   }
-  //   let formData = new FormData(form.current)
-  //   let req = await fetch("https://localhost:3000/login", {
-  //     method: "POST",
-  //     body: formData
-  //   })
-  //   let res = await req.json()
-  //   console.log("Res", res)
-  //   Cookies.set('token', res.token)
-  //   setUser(res.user)
-  // }
+
   const logOut = () => {
     // Cookies.remove('token')
     setUser(null)
@@ -114,7 +105,7 @@ function App() {
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login />} />
         <Route exact path='signup' element={<Signup/>} />
-        <Route exact path='profilepage' element={<ProfilePage currentUser={currentUser} games={games} handleAddGameBtn={handleAddGameBtn} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
+        <Route exact path='profilepage' element={<ProfilePage currentUser={currentUser} games={games} handleAddGameBtn={handleAddGameBtn} handleDeleteGameSubmit={handleDeleteGameSubmit} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
         <Route exact path='addgame' element={<AddGamePage currentUser={currentUser} />} /> 
         <Route exact path='editgame' element={<EditGamePage/>} /> 
         {/* <Route exact path='editprofile' element={<EditProfilePage/>} />  */}

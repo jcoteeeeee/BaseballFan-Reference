@@ -7,7 +7,7 @@ const AboutPage = () => {
                 <Header/> 
             </div>  
             <div> 
-                <h1>Coming Soon</h1>  
+                <p>This is a place holder for an about page. When there is something to write about, I will write about it here </p>  
             </div>
         </div> 
     )

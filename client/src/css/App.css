@@ -363,7 +363,10 @@ hr {
     border: none;
     background-color: rgb(6, 6, 87);
     color: rgb(239, 240, 240); 
+}  
 
+#deletegame-btn:hover{
+    opacity: .8;
 }
 
 
