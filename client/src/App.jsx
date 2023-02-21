@@ -79,16 +79,17 @@ function App() {
     requestGames()
   }, []) 
 
+  //function to delete individual game 
   const handleDeleteGameClick = () => {
     console.log('clicked')
-    const destroy = async (games) => {
-      let req = await fetch(`http://localhost:3000/${games.id}`, {
+    const destroy = async (games, game) => {
+      let req = await fetch(`http://localhost:3000/games/${game.id}`, {
         method: 'DELETE', 
         headers: {'Content-Type': 'application/json'}
      })
     }
-    destroy()
-  }
+    destroy(games)
+  }  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
