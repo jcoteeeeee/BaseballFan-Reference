@@ -11,12 +11,16 @@ const Header = () => {
         navigate('/about')
     }  
 
+    const handleFollowClick = () => {
+        navigate('socialmedia')
+    }
+
     return(
         <div id='header'>
             <img id='logo' onClick={handleLogoClick} src='./photos/bfr-logo.png'/>  
             <hr /> 
             <h2 id='to-about' onClick={handleAboutClick}>ABOUT</h2>
-            <h2 id='to-follow'>FOLLOW</h2>     
+            <h2 id='to-follow' onClick={handleFollowClick}>FOLLOW</h2>     
         </div>
     )
 }
