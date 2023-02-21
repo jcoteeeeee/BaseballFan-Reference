@@ -57,7 +57,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                                 <div id='game-note' className='table-content' style={{display: 'flex'}}>
                                     <div style={{ flex: '50%', textAlign: 'left' }}>{game.note}</div> 
                                     <div style={{ flex: '50%', textAlign: 'right'}}>
-                                        <button id='deletegame-btn' onClick={handleDeleteGameClick}>X</button>
+                                        <button id='deletegame-btn' onClick={handleDeleteGameClick(games)}>X</button>
                                     </div>
                                 </div>
                             </div>  
@@ -74,45 +74,3 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
 
 export default ProfilePage  
 
-    // <div id='game-table' />
-    //     <table>
-    //         <tr>
-    //             <th>Date</th>
-    //             <th>Result</th>
-    //             <th>Score</th>
-    //             <th>Opponent</th>
-    //             <th>Location</th>
-    //             <th>Starting Pitcher</th>
-    //             <th>Note</th>
-    //         </tr>
-    //         {
-    //             games.map((game) => {
-    //                 return (
-    //                     <tr>
-    //                         <th>
-    //                             {game.date}
-    //                         </th>
-    //                         <th>
-    //                             {game.result}
-    //                         </th>
-    //                         <th>
-    //                             {game.score}
-    //                         </th>
-    //                         <th>
-    //                             {game.opponent}
-    //                         </th>
-    //                         <th>
-    //                             {game.location}
-    //                         </th>
-    //                         <th>
-    //                             {game.st_pitcher}
-    //                         </th>
-    //                         <th>
-    //                             {game.note}
-    //                         </th>
-    //                     </tr>
-    //                 )
-    //             })
-    //         }
-    //     </table>   
-    // </div>  
