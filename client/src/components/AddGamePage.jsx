@@ -2,17 +2,17 @@ import Header from './Header.jsx'
 import {useState} from 'react' 
 import {useNavigate} from 'react-router-dom'
 
-const AddGamePage = ( {currentUser, handleAddGameSubmit, userId, date, result, score, opponent, location, stPitcher, note} ) => { 
-    // const [userId, setUserId] = useState(currentUser.user_data)
-    console.log(userId)
+const AddGamePage = ( {currentUser} ) => { 
+    const [userId, setUserId] = useState(currentUser.user_data)
+    console.log(userId) 
     const navigate = useNavigate()
-    // const [date, setDate] = useState('')
-    // const [result, setResult] = useState('')
-    // const [score, setScore] = useState('')  
-    // const [opponent, setOpponent] = useState('')
-    // const [location, setLocation] = useState('')
-    // const [stPitcher, setStPitcher] = useState('') 
-    // const [note, setNote] = useState('')
+    const [date, setDate] = useState('')
+    const [result, setResult] = useState('')
+    const [score, setScore] = useState('')  
+    const [opponent, setOpponent] = useState('')
+    const [location, setLocation] = useState('')
+    const [stPitcher, setStPitcher] = useState('') 
+    const [note, setNote] = useState('')  
 
     console.log(date)
     console.log(result)  
@@ -23,29 +23,29 @@ const AddGamePage = ( {currentUser, handleAddGameSubmit, userId, date, result, s
     console.log(note)
 
     
-    // function handleAddGameSubmit(e) {
-    //     e.preventDefault()
-    //     console.log('submitted')
-    //     navigate('/profilepage')
-    //     const addGame = async (e, game) => {
-    //         let req = await fetch('http://localhost:3000/games', {
-    //             method: 'POST',
-    //             headers: { 'Content-Type': 'application/json' },
-    //             body: JSON.stringify({
-    //                 user_id: userId, 
-    //                 date: date, 
-    //                 result: result,
-    //                 score: score,  
-    //                 opponent: opponent, 
-    //                 location: location,
-    //                 st_pitcher: stPitcher,
-    //                 note: note
-    //             })
-    //         })  
+    function handleAddGameSubmit(e) {
+        e.preventDefault()
+        console.log('submitted')
+        navigate('/profilepage')
+        const addGame = async (e, game) => {
+            let req = await fetch('http://localhost:3000/games', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    user_id: userId, 
+                    date: date, 
+                    result: result,
+                    score: score,  
+                    opponent: opponent, 
+                    location: location,
+                    st_pitcher: stPitcher,
+                    note: note
+                })
+            })  
 
-    //     }
-    //     addGame()
-    // }
+        }
+        addGame()
+    }
 
     return(
         <div>

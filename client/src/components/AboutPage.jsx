@@ -7,7 +7,7 @@ const AboutPage = () => {
                 <Header/> 
             </div>  
             <div> 
-                <p>This is a place holder for an about page. When there is something to write about, I will write about it here </p>  
+                <h1>This is a place holder for an about page. When there is something to write about, I will write about it here </h1>  
             </div>
         </div> 
     )
