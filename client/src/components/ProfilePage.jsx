@@ -57,7 +57,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                                 <div id='game-note' className='table-content' style={{display: 'flex'}}>
                                     <div style={{ flex: '50%', textAlign: 'left' }}>{game.note}</div> 
                                     <div style={{ flex: '50%', textAlign: 'right'}}>
-                                        <button id='deletegame-btn' onClick={handleDeleteGameClick(game)}>X</button>
+                                        <button id='deletegame-btn' onClick={() => {handleDeleteGameClick(game)}}>X</button> {/*this goes in an arow function because it was being called right away when it wasn't. It was deleting every post request right away */}
                                     </div>
                                 </div>
                             </div>  

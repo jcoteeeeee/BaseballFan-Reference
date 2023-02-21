@@ -2,7 +2,7 @@ import Header from './Header.jsx'
 import {useState} from 'react' 
 import {useNavigate} from 'react-router-dom'
 
-const AddGamePage = ({ currentUser }) => { 
+const AddGamePage = ( {currentUser} ) => { 
     const [userId, setUserId] = useState(currentUser.user_data)
     console.log(userId)
     const navigate = useNavigate()
@@ -27,12 +27,12 @@ const AddGamePage = ({ currentUser }) => {
         e.preventDefault()
         console.log('submitted')
         navigate('/profilepage')
-        const addGame = async (e) => {
+        const addGame = async (e, game) => {
             let req = await fetch('http://localhost:3000/games', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    user_id: userId, // needs to be changed later to variable. 1 is placeholder for now so post request works 
+                    user_id: userId, 
                     date: date, 
                     result: result,
                     score: score,  

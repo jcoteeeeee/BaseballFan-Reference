@@ -22,9 +22,9 @@ function App() {
   const navigate = useNavigate() 
   const [users, setUsers] = useState([])   
   const [games, setGames] = useState([]) 
-  let game 
   const [user, setUser] = useState(null) 
   const form = useRef() 
+  let game 
   
 
   // takes you from homepage to login page
@@ -81,16 +81,17 @@ function App() {
   }, []) 
 
   //function to delete individual game 
-  const handleDeleteGameClick = (game) => {
+  const handleDeleteGameClick = (game) => { //actually it's adding game here that makes it stop persisting 
     console.log('clicked')
-    const destroy = async () => {
+    const destroy = async (game) => {
       let req = await fetch(`http://localhost:3000/games/${game.id}`, {
         method: 'DELETE', 
         headers: {'Content-Type': 'application/json'}
      })
     }
-    destroy(game)
-  }  
+    destroy(game) //adding game here is what makes it stop persisting. I guess it's both
+  }    
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -107,8 +108,8 @@ function App() {
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login />} />
         <Route exact path='signup' element={<Signup/>} />
-        <Route exact path='profilepage' element={<ProfilePage currentUser={currentUser} games={games} game={game} handleAddGameBtn={handleAddGameBtn} handleDeleteGameClick={handleDeleteGameClick} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
-        <Route exact path='addgame' element={<AddGamePage currentUser={currentUser} />} /> 
+        <Route exact path='profilepage' element={<ProfilePage currentUser={currentUser} games={games} handleAddGameBtn={handleAddGameBtn} handleDeleteGameClick={handleDeleteGameClick} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
+        <Route exact path='addgame' element={<AddGamePage currentUser={currentUser}/>} /> 
         {/* <Route exact path='editgame' element={<EditGamePage/>} />  */}
         {/* <Route exact path='editprofile' element={<EditProfilePage/>} />  */}
         <Route exact path='about' element={<AboutPage/>} />
