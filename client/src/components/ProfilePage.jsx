@@ -21,8 +21,8 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                 <button id='logout-btn' onClick={() => { loggingOut() }}>Log out</button>
             </div>
             <div id='bio'>  
-                <p>@profilename: {user.username}</p>
-                <p>Favorite team: {user.fav_team}</p>
+                {/* <p>@profilename: {user.username}</p>
+                <p>Favorite team: {user.fav_team}</p> */}
                 {/* <p>First game attended: </p>
                 <p>Total games attended: </p>  */}
                 {/* <button id='edit-profile-btn' onClick={handleEditProfileBtn}>Edit profile</button>  */}
@@ -57,7 +57,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
                                 <div id='game-note' className='table-content' style={{display: 'flex'}}>
                                     <div style={{ flex: '50%', textAlign: 'left' }}>{game.note}</div> 
                                     <div style={{ flex: '50%', textAlign: 'right'}}>
-                                        <button id='deletegame-btn' onClick={handleDeleteGameClick(games)}>X</button>
+                                        <button id='deletegame-btn' onClick={handleDeleteGameClick(game)}>X</button>
                                     </div>
                                 </div>
                             </div>  
@@ -67,7 +67,7 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
             </div>
             {/* <button id='editgame' onClick={handleEditGameBtn}>Edit game</button> 
             <br/>
-            <button onSubmit={() => {handleDeleteGameSubmit}}>Delete game</button> */}
+            <button onSubmit={() => {handleDeleteGameClick}}>Delete game</button> */}
         </div>
     )
 }

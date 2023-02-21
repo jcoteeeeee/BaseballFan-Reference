@@ -3,8 +3,8 @@ import ProfilePage from './components/ProfilePage'
 import Login from './components/Login'
 import Signup from'./components/Signup'   
 import AddGamePage from './components/AddGamePage'  
-import EditGamePage from './components/EditGamePage'  
-import EditProfilePage from './components/EditProfilePage'  
+// import EditGamePage from './components/EditGamePage'  
+// import EditProfilePage from './components/EditProfilePage'  
 import AboutPage from './components/AboutPage'
 import {Routes, Route, useNavigate} from 'react-router-dom'
 import {useEffect, useState, useRef} from 'react'  
@@ -21,7 +21,8 @@ function App() {
   console.log(currentUser)
   const navigate = useNavigate() 
   const [users, setUsers] = useState([])   
-  const [games, setGames] = useState([])
+  const [games, setGames] = useState([]) 
+  let game 
   const [user, setUser] = useState(null) 
   const form = useRef() 
   
@@ -80,15 +81,15 @@ function App() {
   }, []) 
 
   //function to delete individual game 
-  const handleDeleteGameClick = () => {
+  const handleDeleteGameClick = (game) => {
     console.log('clicked')
-    const destroy = async (games, game) => {
+    const destroy = async () => {
       let req = await fetch(`http://localhost:3000/games/${game.id}`, {
         method: 'DELETE', 
         headers: {'Content-Type': 'application/json'}
      })
     }
-    destroy(games)
+    destroy(game)
   }  
 
   const handleSubmit = async (e) => {
@@ -106,9 +107,9 @@ function App() {
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login />} />
         <Route exact path='signup' element={<Signup/>} />
-        <Route exact path='profilepage' element={<ProfilePage currentUser={currentUser} games={games} handleAddGameBtn={handleAddGameBtn} handleDeleteGameClick={handleDeleteGameClick} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
+        <Route exact path='profilepage' element={<ProfilePage currentUser={currentUser} games={games} game={game} handleAddGameBtn={handleAddGameBtn} handleDeleteGameClick={handleDeleteGameClick} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
         <Route exact path='addgame' element={<AddGamePage currentUser={currentUser} />} /> 
-        <Route exact path='editgame' element={<EditGamePage/>} /> 
+        {/* <Route exact path='editgame' element={<EditGamePage/>} />  */}
         {/* <Route exact path='editprofile' element={<EditProfilePage/>} />  */}
         <Route exact path='about' element={<AboutPage/>} />
       </Routes> 
