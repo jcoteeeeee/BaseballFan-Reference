@@ -2,7 +2,7 @@ import Header from './Header.jsx'
 import { useState, useRef, useEffect, react } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 
-const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn, currentUser, handleDeleteGameClick} ) => {
+const ProfilePage = ( {users, games, handleAddGameBtn, handleEditGameBtn, handleEditProfileBtn, currentUser, handleDeleteGameClick} ) => {
     const [user, setUser] = useState(currentUser)
     const [profile, setProfile] = useState([])
     const navigate = useNavigate()
@@ -11,8 +11,6 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
     localStorage.removeItem('token')
     navigate('/')
  }
-
- console.log(user)
     
     return(
         <div>
@@ -20,7 +18,8 @@ const ProfilePage = ( {games, handleAddGameBtn, handleEditGameBtn, handleEditPro
             <div id='logoutbtn-div'>
                 <button id='logout-btn' onClick={() => { loggingOut() }}>Log out</button>
             </div>
-            <div id='bio'>  
+            <div className='bio'>  
+                <p id='table-title'>My Games</p>
                 {/* <p>@profilename: {user.username}</p>
                 <p>Favorite team: {user.fav_team}</p> */}
                 {/* <p>First game attended: </p>

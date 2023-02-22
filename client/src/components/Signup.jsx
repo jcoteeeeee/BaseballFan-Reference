@@ -39,22 +39,22 @@ const Signup = () => {
                 <form id='signup-form' onSubmit={handleSubmit}> 
                     <h2>Sign up</h2>
                     <label className='signup-label'>First name</label>
-                    <input className='signup-input' name='first_name' onChange={handleSignup} />
+                    <input className='signup-input' name='first_name' onChange={handleSignup} required />
                     <br/>
                     <label className='signup-label'>Last name</label> 
-                    <input className='signup-input' name='last_name' onChange={handleSignup} /> 
+                    <input className='signup-input' name='last_name' onChange={handleSignup} required /> 
                     <br/>
                     <label className='signup-label'>Favorite team</label>
-                    <input className='signup-input' name='fav_team' onChange={handleSignup} />
+                    <input className='signup-input' name='fav_team' onChange={handleSignup} required />
                     <br/>
                     <label className='signup-label'>Username</label> 
-                    <input className='signup-input' name='username' onChange={handleSignup}/>
+                    <input className='signup-input' name='username' onChange={handleSignup} required />
                     <br/>
                     <label className='signup-label'>Email</label>
-                    <input id='signup-email' className='signup-input' name='email' type='email' onChange={handleSignup} /> {/*make required later */}
+                    <input id='signup-email' className='signup-input' name='email' type='email' onChange={handleSignup} required /> {/*make required later */}
                     <br />
                     <label className='signup-label'>Password</label>
-                    <input id='signup-password' className='signup-input' name='password' type='password' onChange={handleSignup} /> {/*make required later */}
+                    <input id='signup-password' className='signup-input' name='password' type='password' onChange={handleSignup} required /> {/*make required later */}
                     <br />
                     <button id='signup-btn' type='submit'>Create account </button>
                 </form>  

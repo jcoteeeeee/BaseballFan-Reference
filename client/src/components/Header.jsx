@@ -12,7 +12,7 @@ const Header = () => {
     }  
 
     const handleFollowClick = () => {
-        navigate('socialmedia')
+        navigate('/socialmedia')
     }
 
     return(
