@@ -45,7 +45,7 @@ const AddGamePage = ( {currentUser} ) => {
 
         }
         addGame()
-    }
+    }   
 
     return(
         <div>
@@ -53,25 +53,25 @@ const AddGamePage = ( {currentUser} ) => {
             <div id='addgame-container' className='game-container'> 
             <form id='addgame-form' className='game-form' onSubmit={handleAddGameSubmit}>
                 <label className='game-label'>Date</label>
-                <input value={date} id='add-date' className='game-input' type='date' name='add_date' onChange={(e) => setDate(e.target.value)}/> {/* make required */}
+                <input value={date} id='add-date' className='game-input' type='date' name='add_date' onChange={(e) => setDate(e.target.value)} /> {/* make required */}
                 <br />
                 <label className='game-label'>Result</label>
-                <input value={result} id='add-result' className='game-input' type='text' name='add_result' placeholder='Win'onChange={(e) => setResult(e.target.value)}/>
+                <input value={result} id='add-result' className='game-input' type='text' name='add_result' placeholder='Win'onChange={(e) => setResult(e.target.value)} />
                 <br />
                 <label className='game-label'>Score</label>
-                <input value={score} id='add-score' className='game-input' type='text' name='add_score' placeholder='10-5' onChange={(e) => setScore(e.target.value)}/>
+                <input value={score} id='add-score' className='game-input' type='text' name='add_score' placeholder='10-5' onChange={(e) => setScore(e.target.value)} />
                 <br />   
                 <label className='game-label'>Opponent</label>
-                <input value={opponent} id='add-opponent' className='game-input' type='text' name='add_opp' placeholder='Arizona Diamondbacks' onChange={(e) => setOpponent(e.target.value)}/>
+                <input value={opponent} id='add-opponent' className='game-input' type='text' name='add_opp' placeholder='Arizona Diamondbacks' onChange={(e) => setOpponent(e.target.value)} />
                 <br/>
                 <label className='game-label'>Location</label>
-                <input value={location} id='add-location' className='game-input' type='text' name='add_location' placeholder='American Family Field' onChange={(e) => setLocation(e.target.value)}/>
+                <input value={location} id='add-location' className='game-input' type='text' name='add_location' placeholder='American Family Field' onChange={(e) => setLocation(e.target.value)} />
                 <br />
                 <label className='game-label'>Starting pitcher </label>  
-                <input value={stPitcher} id='add-stp' className='game-input' type='text' name='add_stp' placeholder='Aaron Nola'onChange={(e) => setStPitcher(e.target.value)}/>  
+                <input value={stPitcher} id='add-stp' className='game-input' type='text' name='add_stp' placeholder='Aaron Nola'onChange={(e) => setStPitcher(e.target.value)} />  
                 <br/>
                 <label className='game-label'>Note</label>
-                <input value={note} id='add-note' className='game-input' type='text' name='add_note' placeholder='I was bored' onChange={(e) => setNote(e.target.value)}/>
+                <input value={note} id='add-note' className='game-input' type='text' name='add_note' placeholder='I was bored' onChange={(e) => setNote(e.target.value)} />
                 <br />
                 <button class='game-btn' type='submit'>Add game</button>
             </form>     

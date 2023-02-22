@@ -3,7 +3,7 @@ import { React, useState, useEffect } from 'react'
 import http from './axios/http'
 import { Navigate, useNavigate } from 'react-router-dom'
 
-const Login = ( ) => {
+const Login = ( {currentUser}) => {
     const [loginData, setLoginData] = useState({
         email: '',
         password: '',
@@ -18,7 +18,7 @@ const Login = ( ) => {
         })
     }
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => { 
         e.preventDefault()
         const {data} = await http.post("/login", loginData)
         localStorage.setItem('token', JSON.stringify(data))

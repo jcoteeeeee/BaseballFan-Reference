@@ -38,9 +38,9 @@ function App() {
   }
 
   // takes you from login page to profile page
-  const handleLogin = () => {
-    navigate('/profilepage')
-  }
+  // const handleLogin = () => {
+  //   navigate('/profilepage')
+  // }
 
 
   // takes you from profile page to addgamepage 
@@ -110,9 +110,9 @@ function App() {
     <div>
       <Routes>
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
-        <Route exact path='login' element={<Login />} />
+        <Route exact path='login' element={<Login user={user} currentUser={currentUser} />} />
         <Route exact path='signup' element={<Signup/>} />
-        <Route exact path='profilepage' element={<ProfilePage currentUser={currentUser} games={games} handleAddGameBtn={handleAddGameBtn} handleDeleteGameClick={handleDeleteGameClick} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
+        <Route exact path={'profilepage'} element={<ProfilePage currentUser={currentUser} games={games} handleAddGameBtn={handleAddGameBtn} handleDeleteGameClick={handleDeleteGameClick} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
         <Route exact path='addgame' element={<AddGamePage currentUser={currentUser}/>} />
         {/* <Route exact path='editgame' element={<EditGamePage/>} />  */}
         {/* <Route exact path='editprofile' element={<EditProfilePage/>} />  */}
