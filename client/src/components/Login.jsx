@@ -23,8 +23,8 @@ const Login = ( {currentUser}) => {
         const {data} = await http.post("/login", loginData)
         localStorage.setItem('token', JSON.stringify(data))
         console.log(data)
-        navigate('/profilepage')
-    }
+        navigate('/profilepage') 
+    } 
     
     return(
         <div>
