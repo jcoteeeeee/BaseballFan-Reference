@@ -112,7 +112,7 @@ function App() {
         <Route exact path='/' element={<Homepage handleLogBtnClick={handleLogBtnClick} handleSignupClick={handleSignupClick}/>} /> 
         <Route exact path='login' element={<Login user={user} currentUser={currentUser} />} />
         <Route exact path='signup' element={<Signup/>} />
-        <Route exact path={'profilepage'} element={<ProfilePage currentUser={currentUser} games={games} handleAddGameBtn={handleAddGameBtn} handleDeleteGameClick={handleDeleteGameClick} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
+        <Route exact path='profilepage' element={<ProfilePage currentUser={currentUser} games={games} handleAddGameBtn={handleAddGameBtn} handleDeleteGameClick={handleDeleteGameClick} handleEditGameBtn={handleEditGameBtn} handleEditProfileBtn={handleEditProfileBtn} user={user} />} />
         <Route exact path='addgame' element={<AddGamePage currentUser={currentUser}/>} />
         {/* <Route exact path='editgame' element={<EditGamePage/>} />  */}
         {/* <Route exact path='editprofile' element={<EditProfilePage/>} />  */}
