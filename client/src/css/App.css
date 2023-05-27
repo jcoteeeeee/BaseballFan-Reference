@@ -1,15 +1,27 @@
 /* For header */
 #header {
     display: flex; 
-    justify-content: center; 
+    flex-direction: column; 
+    align-items: center;   
 }
 
+#logo-container{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} 
+
+#header-nav{
+    display: flex; 
+    justify-content: space-around; 
+    width: 100%; 
+} 
+
 #to-about {
-    position: absolute; 
-    left: 18%; 
-    top: 20%;
     color: rgb(6, 6, 87); 
     font-size: 16px;     
+    padding: 10px; 
+    margin: 10px; 
 } 
 
 #to-about:hover{
@@ -17,11 +29,10 @@
 }
 
 #to-follow {
-    position: absolute; 
-    left: 79%; 
-    top: 20%; 
     color: rgb(6, 6, 87); 
     font-size: 16px; 
+    padding: 10px; 
+    margin: 10px 
 }
 
 #to-follow:hover{
@@ -40,25 +51,33 @@
     position: absolute;
 } 
 
+#home-photo-container{ 
+    margin: 10px; 
+    padding: 5px; 
+    display: flex; 
+    justify-content: center; 
+}  
+
 #home-photo {
     width: 700px;
     height: 300px;
-    top: 30%;
-    left: 23%; 
-    position: absolute; 
 }  
 
+#log-sig{
+    display: flex; 
+    justify-content: center; 
+}
+
 #to-login { 
-    top: 82%; 
-    left: 46%;
-    position: absolute; 
     font-size: 15px; 
     font-family: Verdana, sans-serif;
     color: rgb(239, 240, 240);
     background-color: rgb(6, 6, 87);
-    padding: 12px 32px; 
+    /* padding: 12px 32px;  */  
+    height: 50px; 
+    width: 100px; 
     border-radius: 8px; 
-    border: none;
+    border: none; 
 } 
 
 #to-login:hover {
@@ -66,11 +85,11 @@
 }
 
 #to-signup {
-    top: 88%; 
-    left: 47%; 
-    position: absolute; 
     font-family: Verdana, sans-serif; 
+    padding: 50x 50px; 
     color: rgb(6, 6, 87);  
+    position: relative; 
+    left: 10px; 
 }  
 
 #to-signup:hover{

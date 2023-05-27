@@ -16,11 +16,15 @@ const Header = () => {
     }
 
     return(
-        <div id='header'>
-            <img id='logo' onClick={handleLogoClick} src='./photos/bfr-logo.png'/>  
-            <hr /> 
-            <h2 id='to-about' onClick={handleAboutClick}>ABOUT</h2>
-            <h2 id='to-follow' onClick={handleFollowClick}>FOLLOW</h2>     
+        <div id='header'> 
+            <div id='logo-container'>
+                <img id='logo-img' onClick={handleLogoClick} src='./photos/bfr-logo.png'/>  
+            </div>
+            {/* <hr />  */} 
+            <nav id='header-nav'>  
+                <h2 id='to-about' onClick={handleAboutClick}>ABOUT</h2>
+                <h2 id='to-follow' onClick={handleFollowClick}>FOLLOW</h2>     
+            </nav>
         </div>
     )
 }
