@@ -33,8 +33,10 @@ const Signup = () => {
     } 
 
     return(
-        <div>
-            <Header/> 
+        <div> 
+            <div class='header-container'> 
+                <Header/> 
+            </div>
             <div id='signup-container'> 
                 <form id='signup-form' onSubmit={handleSubmit}> 
                     <h2>Sign up</h2>

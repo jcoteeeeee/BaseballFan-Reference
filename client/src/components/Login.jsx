@@ -27,8 +27,10 @@ const Login = ( {currentUser}) => {
     } 
     
     return(
-        <div>
-            <Header/> 
+        <div> 
+            <div class='header-container'>  
+                <Header/> 
+            </div>
             <div id='login-container'>
                 <form id='login-form' onSubmit={handleSubmit}> 
                     <h2>Login</h2>
