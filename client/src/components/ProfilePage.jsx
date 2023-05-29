@@ -13,10 +13,17 @@ const ProfilePage = ( {users, games, handleAddGameBtn, handleEditGameBtn, handle
  }
     
     return(
-        <div>
-            <Header/> 
-            <div id='logoutbtn-div'>
+        <div> 
+            <div class='header-container'>  
+                <Header/> 
+            </div>
+            <div id='logoutbtn-container'>
                 <button id='logout-btn' onClick={() => { loggingOut() }}>Log out</button>
+            </div> 
+            <div id='add-btn-container'>
+                <button id='addgame-btn' onClick={handleAddGameBtn}>
+                    Add game
+                </button>
             </div>
             <div className='bio'>  
                 <p id='table-title'>My Games</p>
@@ -30,9 +37,6 @@ const ProfilePage = ( {users, games, handleAddGameBtn, handleEditGameBtn, handle
                 <h3>Record</h3>
                 <h3>percentage </h3>
             </div>  */}
-            <button id='addgame-btn' onClick={handleAddGameBtn}>
-                Add game
-                </button><br />
             <div id='game-table'>
                 <div style={{display: 'flex', border: '1px solid rgb(6, 6, 87) '}}>
                     <div className='table-category'>Date</div>

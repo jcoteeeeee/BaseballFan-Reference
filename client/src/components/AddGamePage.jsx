@@ -48,8 +48,10 @@ const AddGamePage = ( {currentUser} ) => {
     }   
 
     return(
-        <div>
-            <Header/> 
+        <div> 
+            <div class='header-container'>  
+                <Header/> 
+            </div>
             <div id='addgame-container' className='game-container'> 
             <form id='addgame-form' className='game-form' onSubmit={handleAddGameSubmit}>
                 <label className='game-label'>Date</label>
